@@ -20,6 +20,7 @@ import { HRPage } from "./components/pages/HRPage";
 import { ITPage } from "./components/pages/ITPage";
 import { CustomerExperiencePage } from "./components/pages/CustomerExperiencePage";
 import { BuildYourOwnPage } from "./components/pages/BuildYourOwnPage";
+import { ConnectorsPage } from "./components/pages/ConnectorsPage";
 import { AboutPage } from "./components/pages/AboutPage";
 import { PricingPage } from "./components/pages/PricingPage";
 import { DocumentationPage } from "./components/pages/DocumentationPage";
