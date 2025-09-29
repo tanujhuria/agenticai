@@ -1,8 +1,17 @@
+<<<<<<< HEAD
+=======
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
 @custom-variant dark (&:is(.dark *));
 
 :root {
   --font-size: 16px;
   --font-family: "Mr Eaves Xl Modot", Helvetica, Arial, sans-serif;
+<<<<<<< HEAD
+=======
+  --font-family-headings: "Comfortaa", "Mr Eaves Xl Modot", Helvetica, Arial, sans-serif;
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
   --background: #ffffff;
   --foreground: oklch(0.145 0 0);
   --card: #ffffff;
@@ -179,17 +188,40 @@
 
   /* Ensure header stays above all content */
   header {
+<<<<<<< HEAD
     z-index: 9999 !important;
+=======
+    z-index: 10000 !important;
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
   }
 
   /* Prevent content from going behind fixed header */
   body {
+<<<<<<< HEAD
     padding-top: 0;
+=======
+    padding-top: 80px;
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
   }
 
   /* Main content should start below header */
   main, .main-content {
+<<<<<<< HEAD
     margin-top: 80px;
+=======
+    margin-top: 0;
+  }
+
+  /* Specific fixes for dropdown menus */
+  .dropdown-shadow {
+    z-index: 9999 !important;
+  }
+
+  /* Ensure page content doesn't overlap header */
+  section:first-of-type,
+  div:first-of-type {
+    margin-top: 0;
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
   }
 }
 
@@ -199,12 +231,20 @@
 @layer base {
   :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
     h1 {
+<<<<<<< HEAD
+=======
+      font-family: var(--font-family-headings);
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
       font-size: var(--text-2xl);
       font-weight: var(--font-weight-medium);
       line-height: 1.5;
     }
 
     h2 {
+<<<<<<< HEAD
+=======
+      font-family: var(--font-family-headings);
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
       font-size: var(--text-xl);
       font-weight: var(--font-weight-medium);
       line-height: 1.5;
@@ -413,6 +453,24 @@ html {
   scrollbar-color: #8b5cf6 rgba(139, 92, 246, 0.1);
 }
 
+<<<<<<< HEAD
+=======
+/* Large text and headings use Comfortaa font */
+.text-3xl, .text-4xl, .text-5xl, .text-6xl,
+h1.text-3xl, h1.text-4xl, h1.text-5xl, h1.text-6xl,
+h2.text-3xl, h2.text-4xl, h2.text-5xl, h2.text-6xl,
+.text-lg, .text-xl, .text-2xl {
+  font-family: var(--font-family-headings) !important;
+}
+
+/* Ensure all large headings use Comfortaa */
+.text-3xl, .text-4xl, .text-5xl, .text-6xl {
+  font-family: var(--font-family-headings) !important;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
 /* Enhanced footer animations */
 .footer-animate-in {
   animation: footerSlideUp 0.8s ease-out forwards;
@@ -429,6 +487,23 @@ html {
   }
 }
 
+<<<<<<< HEAD
+=======
+/* Network and particle effects */
+.network-glow {
+  filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.3));
+}
+
+.particle-trail {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.8) 0%, transparent 70%);
+}
+
+/* Radial gradient utility */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
 /* Scroll to top button styles */
 .scroll-to-top-btn {
   position: fixed;
@@ -465,3 +540,379 @@ html {
   visibility: visible;
   transform: translateY(0);
 }
+<<<<<<< HEAD
+=======
+
+/* Mobile Menu Animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInBackdrop {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+  }
+}
+
+@keyframes hamburgerRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(90deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes menuItemSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes submenuExpand {
+  from {
+    height: 0;
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  to {
+    height: auto;
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes gradientShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Mobile menu specific styles */
+.mobile-menu-backdrop {
+  animation: fadeInBackdrop 0.3s ease-out forwards;
+}
+
+.mobile-menu-panel {
+  animation: slideInRight 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  box-shadow: 
+    -20px 0 25px -5px rgba(0, 0, 0, 0.1),
+    -10px 0 10px -5px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(139, 92, 246, 0.05);
+}
+
+.mobile-menu-panel.closing {
+  animation: slideOutRight 0.3s ease-in forwards;
+}
+
+.mobile-menu-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-menu-item::before {
+  content: '';
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(139, 92, 246, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.mobile-menu-item:hover::before {
+  left: 100%;
+}
+
+.mobile-submenu {
+  transform-origin: top;
+  animation: submenuExpand 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.mobile-submenu.closing {
+  animation: submenuExpand 0.2s ease-in reverse forwards;
+}
+
+/* Staggered animations for menu items */
+.mobile-menu-stagger > .mobile-menu-item {
+  opacity: 0;
+  transform: translateX(30px);
+  animation: menuItemSlideIn 0.4s ease-out forwards;
+}
+
+.mobile-menu-stagger > .mobile-menu-item:nth-child(1) { animation-delay: 0.1s; }
+.mobile-menu-stagger > .mobile-menu-item:nth-child(2) { animation-delay: 0.15s; }
+.mobile-menu-stagger > .mobile-menu-item:nth-child(3) { animation-delay: 0.2s; }
+.mobile-menu-stagger > .mobile-menu-item:nth-child(4) { animation-delay: 0.25s; }
+.mobile-menu-stagger > .mobile-menu-item:nth-child(5) { animation-delay: 0.3s; }
+.mobile-menu-stagger > .mobile-menu-item:nth-child(6) { animation-delay: 0.35s; }
+.mobile-menu-stagger > .mobile-menu-item:nth-child(7) { animation-delay: 0.4s; }
+.mobile-menu-stagger > .mobile-menu-item:nth-child(8) { animation-delay: 0.45s; }
+.mobile-menu-stagger > .mobile-menu-item:nth-child(9) { animation-delay: 0.5s; }
+
+/* Hamburger menu animations */
+.hamburger-line {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: center;
+}
+
+.hamburger-active .hamburger-line:first-child {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger-active .hamburger-line:last-child {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile-specific button effects */
+.mobile-action-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-action-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.mobile-action-button:hover::before {
+  left: 100%;
+}
+
+.mobile-gradient-button {
+  background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+  background-size: 200% 100%;
+  transition: all 0.3s ease;
+}
+
+.mobile-gradient-button:hover {
+  background-position: right center;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+}
+
+.mobile-gradient-button:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 10px rgba(139, 92, 246, 0.4);
+}
+
+/* Responsive mobile menu improvements */
+@media (max-width: 480px) {
+  .mobile-menu-panel {
+    max-width: 100vw;
+    width: 100vw;
+  }
+  
+  .mobile-menu-item {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .mobile-menu-item {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Enhanced loading animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  animation: shimmer 1.5s ease-in-out infinite;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.fade-in-50 {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.slide-in-from-bottom-4 {
+  animation: slideInFromBottom 0.4s ease-out;
+}
+
+.slide-in-from-top-4 {
+  animation: slideInFromTop 0.4s ease-out;
+}
+
+/* Progressive content loading */
+.content-loading {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.content-loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animations for lists */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Content reveal animation */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-up.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Skeleton loading improvements */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* Fast content transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 300ms ease-out;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 200ms ease-in;
+}
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)

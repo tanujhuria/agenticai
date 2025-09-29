@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
+<<<<<<< HEAD
 import { Bot, Zap, Users, BarChart3, Shield, Clock, ArrowRight, CheckCircle, Star, TrendingUp, MessageSquare, Calendar, FileText, Database, Settings, Workflow, Brain, Target, Lightbulb } from 'lucide-react';
 
 const agentTypes = [
@@ -10,6 +11,19 @@ const agentTypes = [
     features: ["Multi-language support", "Sentiment analysis", "Escalation handling", "Integration with CRM"],
     color: "from-blue-600 to-cyan-600",
     stats: { efficiency: "90%", satisfaction: "95%", resolution: "24/7" }
+=======
+import { Bot, Zap, Users, BarChart3, Shield, Clock, ArrowRight, CheckCircle, Star, TrendingUp, MessageSquare, Calendar, FileText, Database, Settings, Workflow, Brain, Target, Lightbulb, Headphones } from 'lucide-react';
+
+const agentTypes = [
+  // Row 1: Marketing, Sales, Customer Experience
+  {
+    icon: Target,
+    title: "Marketing AVi",
+    description: "Automated marketing campaign management with AI-driven optimization",
+    features: ["Multi-channel campaigns", "A/B testing", "Audience segmentation", "ROI optimization"],
+    color: "from-purple-600 to-pink-600",
+    stats: { roi: "300%", efficiency: "80%", campaigns: "50+" }
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
   },
   {
     icon: TrendingUp,
@@ -20,6 +34,7 @@ const agentTypes = [
     stats: { conversion: "40%", revenue: "$2.5M", leads: "10k+" }
   },
   {
+<<<<<<< HEAD
     icon: BarChart3,
     title: "Analytics AVi",
     description: "Real-time data analysis and intelligent business insights",
@@ -30,12 +45,45 @@ const agentTypes = [
   {
     icon: Users,
     title: "HR AVi",
+=======
+    icon: MessageSquare,
+    title: "Customer Experience AVi",
+    description: "24/7 intelligent customer support that learns from every interaction",
+    features: ["Multi-language support", "Sentiment analysis", "Escalation handling", "Integration with CRM"],
+    color: "from-blue-600 to-cyan-600",
+    stats: { efficiency: "90%", satisfaction: "95%", resolution: "24/7" }
+  },
+  // Row 2: Support, HR Recruiting, IT
+  {
+    icon: Headphones,
+    title: "Support AVi",
+    description: "Autonomous customer support agents with AI-powered search and response",
+    features: ["AI-powered search", "Live chat management", "Email automation", "Knowledge base integration"],
+    color: "from-indigo-600 to-purple-600",
+    stats: { resolution: "2x faster", accuracy: "95%", satisfaction: "98%" }
+  },
+  {
+    icon: Users,
+    title: "HR Recruiting AVi",
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
     description: "Streamline recruitment, onboarding, and employee management",
     features: ["Resume screening", "Interview scheduling", "Onboarding workflows", "Performance tracking"],
     color: "from-orange-600 to-red-600",
     stats: { hiring: "60% faster", satisfaction: "92%", retention: "85%" }
   },
   {
+<<<<<<< HEAD
+=======
+    icon: Settings,
+    title: "IT AVi",
+    description: "Automated IT operations, monitoring, and infrastructure management",
+    features: ["System monitoring", "Incident response", "Resource optimization", "Automated deployments"],
+    color: "from-gray-600 to-slate-600",
+    stats: { uptime: "99.9%", response: "< 2min", efficiency: "85%" }
+  },
+  // Row 3: Security, Build Your Own, View All
+  {
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
     icon: Shield,
     title: "Security AVi",
     description: "Proactive threat detection and automated security responses",
@@ -44,6 +92,7 @@ const agentTypes = [
     stats: { threats: "99.9%", response: "< 1min", uptime: "99.99%" }
   },
   {
+<<<<<<< HEAD
     icon: Calendar,
     title: "Operations AVi",
     description: "Optimize workflows and automate routine operational tasks",
@@ -74,6 +123,22 @@ const agentTypes = [
     features: ["CI/CD automation", "Infrastructure monitoring", "Auto-scaling", "Incident management"],
     color: "from-gray-600 to-slate-600",
     stats: { deployment: "50x faster", uptime: "99.9%", recovery: "2min" }
+=======
+    icon: Brain,
+    title: "Build Your Own AVi",
+    description: "Create custom AI agents tailored to your specific business needs",
+    features: ["Custom workflows", "No-code builder", "API integrations", "Advanced analytics"],
+    color: "from-violet-600 to-purple-600",
+    stats: { flexibility: "100%", deployment: "Days", custom: "∞" }
+  },
+  {
+    icon: ArrowRight,
+    title: "View All AVi's",
+    description: "Explore our complete suite of AI agents and find the perfect solution",
+    features: ["Browse catalog", "Compare features", "See pricing", "Get recommendations"],
+    color: "from-teal-600 to-blue-600",
+    stats: { agents: "50+", industries: "20+", solutions: "∞" }
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
   }
 ];
 
@@ -122,7 +187,11 @@ export function AgentsPage() {
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-white">
       {/* Hero Section */}
       <motion.section 
+<<<<<<< HEAD
         className="pt-32 pb-20 px-6"
+=======
+        className="pt-24 pb-20 px-6"
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}

@@ -6,9 +6,15 @@ export function AwardsSections() {
   return (
     <div className="bg-white">
       {/* Gartner Awards Section */}
+<<<<<<< HEAD
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
+=======
+      <section className="py-12 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -29,7 +35,11 @@ export function AwardsSections() {
               </div>
 
               <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4">
+<<<<<<< HEAD
                 Workato is proud to be recognized as a Leader
+=======
+                Agentic View is proud to be recognized as a Leader
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
               </h2>
 
               <div className="flex items-center space-x-8 mb-6">
@@ -78,6 +88,7 @@ export function AwardsSections() {
       </section>
 
       {/* Trusted by the Best Section */}
+<<<<<<< HEAD
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl text-center mb-16">
@@ -85,13 +96,26 @@ export function AwardsSections() {
           </h2>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
+=======
+      <section className="py-12 px-6 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl text-center mb-12">
+            Trusted by the very best
+          </h2>
+
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
+<<<<<<< HEAD
               <div className="bg-white rounded-2xl p-8">
+=======
+              <div className="bg-white rounded-2xl p-6">
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
                 <div className="mb-6">
                   <h3 className="text-2xl mb-4">Atlassian</h3>
                   
@@ -120,7 +144,11 @@ export function AwardsSections() {
                 </div>
 
                 <blockquote className="text-gray-700 italic mb-4">
+<<<<<<< HEAD
                   "Business users have organically started using Workato. Once we identify those business users, we elevate them to be champions to empower other teams or other people, and use them to get the next wave of scale."
+=======
+                  "Business users have organically started using Agentic View. Once we identify those business users, we elevate them to be champions to empower other teams or other people, and use them to get the next wave of scale."
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
                 </blockquote>
 
                 <div className="flex items-center space-x-4">
@@ -144,7 +172,11 @@ export function AwardsSections() {
               viewport={{ once: true }}
             >
               <div className="text-center">
+<<<<<<< HEAD
                 <h3 className="text-6xl md:text-7xl lg:text-8xl mb-8">
+=======
+                <h3 className="text-5xl md:text-6xl lg:text-7xl mb-6">
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
                   <span 
                     className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
                   >

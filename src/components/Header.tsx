@@ -6,6 +6,12 @@ import { PlatformDropdown } from './PlatformDropdown';
 import { SolutionsDropdown } from './SolutionsDropdown';
 import { ResourcesDropdown } from './ResourcesDropdown';
 import { PartnersDropdown } from './PartnersDropdown';
+<<<<<<< HEAD
+=======
+import { HamburgerButton, MobileMenu } from './MobileMenu';
+import { useMobileMenu } from '../hooks/useMobileMenu';
+import { logoIconImg, logoTextImg } from '../assets';
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
 
 const navigationItems: any[] = [];
 
@@ -22,6 +28,10 @@ interface HeaderProps {
 export function Header({ onLoginClick, onTrialClick, onTalkToSalesClick, onLogoClick, isWhiteBackground = false, onNavigationClick, onMenuStateChange }: HeaderProps) {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [showEmailInput, setShowEmailInput] = useState(false);
+<<<<<<< HEAD
+=======
+  const { isOpen: isMobileMenuOpen, toggleMenu, closeMenu } = useMobileMenu();
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
 
   const handleDropdownChange = (dropdownName: string | null) => {
     setActiveDropdown(dropdownName);
@@ -51,6 +61,7 @@ export function Header({ onLoginClick, onTrialClick, onTalkToSalesClick, onLogoC
             onClick={onLogoClick}
             className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
           >
+<<<<<<< HEAD
             <div 
               className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center text-lg sm:text-xl font-bold"
               style={{ 
@@ -61,6 +72,18 @@ export function Header({ onLoginClick, onTrialClick, onTalkToSalesClick, onLogoC
               A
             </div>
             <span className="text-lg sm:text-xl font-medium">Agentic View</span>
+=======
+            <img 
+              src={logoIconImg}
+              alt="AgenticView Logo"
+              className="w-8 h-8 sm:w-10 sm:h-10"
+            />
+            <img 
+              src={logoTextImg}
+              alt="AgenticView"
+              className="h-6 sm:h-8 w-auto"
+            /> 
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
           </button>
 
           {/* Navigation */}
@@ -112,11 +135,19 @@ export function Header({ onLoginClick, onTrialClick, onTalkToSalesClick, onLogoC
                 <AnimatePresence>
                   {activeDropdown === item.name && (
                     <motion.div
+<<<<<<< HEAD
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
                       className="absolute top-full left-0 mt-2 w-64 bg-gray-900 rounded-xl shadow-xl border border-gray-800 overflow-hidden"
+=======
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-2 w-64 bg-gray-900 rounded-xl shadow-xl border border-gray-800 overflow-hidden-oigin-top-left"
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
                     >
                       <div 
                         className="h-1 w-full bg-gradient-to-r from-primary to-secondary"
@@ -165,6 +196,7 @@ export function Header({ onLoginClick, onTrialClick, onTalkToSalesClick, onLogoC
               Request a demo
             </button>
 
+<<<<<<< HEAD
             {/* Talk to Sales */}
             {showEmailInput ? (
               <div className="flex items-center space-x-2">
@@ -196,3 +228,54 @@ export function Header({ onLoginClick, onTrialClick, onTalkToSalesClick, onLogoC
     </header>
   );
 }
+=======
+            {/* Talk to Sales (Desktop only) */}
+            <div className="hidden lg:block">
+              {showEmailInput ? (
+                <div className="flex items-center space-x-2">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="px-3 py-2 bg-gray-800 text-white rounded-lg text-sm w-40"
+                  />
+                  <button 
+                    onClick={handleTalkToSales}
+                    className="p-2 rounded-lg transition-all hover:scale-105 bg-gradient-to-r from-primary to-secondary text-white"
+                  >
+                    <Mail className="w-4 h-4" />
+                  </button>
+                </div>
+              ) : (
+                <button 
+                  onClick={handleTalkToSales}
+                  className="px-4 py-2 rounded-lg flex items-center space-x-2 transition-all hover:scale-105 text-sm bg-gradient-to-r from-primary to-secondary text-white whitespace-nowrap"
+                >
+                  <span>Talk to sales</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </button>
+              )}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <HamburgerButton
+              isOpen={isMobileMenuOpen}
+              onClick={toggleMenu}
+              isWhiteBackground={isWhiteBackground}
+            />
+          </div>
+        </div>
+      </div>
+      {/* Mobile Menu */}
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        onClose={closeMenu}
+        onNavigationClick={onNavigationClick}
+        onLoginClick={onLoginClick}
+        onTrialClick={onTrialClick}
+        onTalkToSalesClick={onTalkToSalesClick}
+        isWhiteBackground={isWhiteBackground}
+      />
+    </header>
+  );
+}
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)

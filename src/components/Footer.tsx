@@ -1,5 +1,11 @@
 import { Facebook, Twitter, Linkedin, Youtube, Instagram } from 'lucide-react';
+<<<<<<< HEAD
 import { LanguageSelector } from './LanguageSelector';
+=======
+import { motion } from 'framer-motion';
+import { LanguageSelector } from './LanguageSelector';
+import { logoIconImg, logoTextImg } from '../assets';
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
 
 interface FooterProps {
   currentLanguage?: string;
@@ -9,6 +15,7 @@ interface FooterProps {
   enableScrollAnimations?: boolean;
 }
 
+<<<<<<< HEAD
 export function Footer({ 
   currentLanguage = 'English', 
   onLanguageChange = () => {}, 
@@ -26,10 +33,62 @@ export function Footer({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
+=======
+export function Footer({
+  currentLanguage = 'English',
+  onLanguageChange = () => {},
+  onLogoClick = () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+  onNavigationClick = (page: string) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  },
+  // defaulting to true so effect is visible by default — you can pass false to disable
+  enableScrollAnimations = true
+}: FooterProps) {
+  // container variant to stagger children
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  // each column animates up + fade
+  const columnVariants = {
+    hidden: { opacity: 0, y: 24 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.60, ease: 'easeOut' },
+    },
+  };
+
+  return (
+    <footer className="bg-white text-gray-900 py-12 px-6 border-t border-gray-200">
+      <div className="max-w-7xl mx-auto">
+        {/* Main Footer Content */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12"
+          initial="hidden"
+          // If enableScrollAnimations -> animate on scroll into view, else animate immediately on mount
+          animate={enableScrollAnimations ? undefined : 'show'}
+          whileInView={enableScrollAnimations ? 'show' : undefined}
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+        >
+          {/* Company Info */}
+          <motion.div variants={columnVariants} className="lg:col-span-1 relative">
+            {/* subtle blurred shadow behind column (non-intrusive) */}
+            <div className="absolute -inset-3 -z-10 rounded-lg blur-3xl opacity-10 bg-gradient-to-br from-gray-200 to-transparent pointer-events-none" />
+
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
             <button 
               onClick={onLogoClick}
               className="flex items-center space-x-3 mb-6 hover:opacity-80 transition-opacity"
             >
+<<<<<<< HEAD
               <div 
                 className="w-10 h-10 rounded-lg flex items-center justify-center text-xl font-bold"
                 style={{ 
@@ -40,6 +99,18 @@ export function Footer({
                 A
               </div>
               <span className="text-xl font-medium text-gray-900">Agentic View</span>
+=======
+              <img 
+                src={logoIconImg}
+                alt="AgenticView Logo"
+                className="w-8 h-8 flex-shrink-0"
+              />
+              <img 
+                src={logoTextImg}
+                alt="AgenticView"
+                className="h-6 w-auto flex-shrink-0"
+              />
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
             </button>
             <p className="text-gray-600 mb-6 text-sm">
               The next generation of AI agents built for the enterprise.
@@ -61,10 +132,18 @@ export function Footer({
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
+<<<<<<< HEAD
           </div>
 
           {/* Company */}
           <div>
+=======
+          </motion.div>
+
+          {/* Company */}
+          <motion.div variants={columnVariants} className="relative">
+            <div className="absolute -inset-3 -z-10 rounded-lg blur-3xl opacity-8 bg-gradient-to-br from-gray-200 to-transparent pointer-events-none" />
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
             <h3 className="text-lg mb-4 text-gray-900">Company</h3>
             <ul className="space-y-3 text-sm">
               <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">The Agentic View Platform</button></li>
@@ -77,10 +156,18 @@ export function Footer({
               <li><button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors">Agentic View Cares</button></li>
               <li><button onClick={() => onNavigationClick('press')} className="text-gray-600 hover:text-gray-900 transition-colors">Press</button></li>
             </ul>
+<<<<<<< HEAD
           </div>
 
           {/* Product */}
           <div>
+=======
+          </motion.div>
+
+          {/* Product */}
+          <motion.div variants={columnVariants} className="relative">
+            <div className="absolute -inset-3 -z-10 rounded-lg blur-3xl opacity-8 bg-gradient-to-br from-gray-200 to-transparent pointer-events-none" />
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
             <h3 className="text-lg mb-4 text-gray-900">Product</h3>
             <ul className="space-y-3 text-sm">
               <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">Enterprise iPaaS</button></li>
@@ -95,10 +182,18 @@ export function Footer({
               <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">Data Hub / MDM</button></li>
               <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">BPM Services</button></li>
             </ul>
+<<<<<<< HEAD
           </div>
 
           {/* Resources & Learn */}
           <div>
+=======
+          </motion.div>
+
+          {/* Resources & Learn */}
+          <motion.div variants={columnVariants} className="relative">
+            <div className="absolute -inset-3 -z-10 rounded-lg blur-3xl opacity-8 bg-gradient-to-br from-gray-200 to-transparent pointer-events-none" />
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
             <h3 className="text-lg mb-4 text-gray-900">Resources</h3>
             <ul className="space-y-3 text-sm">
               <li><button onClick={() => onNavigationClick('demo')} className="text-gray-600 hover:text-gray-900 transition-colors">Demo</button></li>
@@ -120,10 +215,18 @@ export function Footer({
               <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">Software Integration Guide</button></li>
               <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">What is Process Automation?</button></li>
             </ul>
+<<<<<<< HEAD
           </div>
 
           {/* Contact */}
           <div>
+=======
+          </motion.div>
+
+          {/* Contact */}
+          <motion.div variants={columnVariants} className="relative">
+            <div className="absolute -inset-3 -z-10 rounded-lg blur-3xl opacity-8 bg-gradient-to-br from-gray-200 to-transparent pointer-events-none" />
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
             <h3 className="text-lg mb-4 text-gray-900">Contact</h3>
             <ul className="space-y-3 text-sm">
               <li><button onClick={() => onNavigationClick('contact')} className="text-gray-600 hover:text-gray-900 transition-colors">Contact Sales</button></li>
@@ -137,8 +240,13 @@ export function Footer({
               <li><button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors">G2</button></li>
               <li><button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors">TrustRadius</button></li>
             </ul>
+<<<<<<< HEAD
           </div>
         </div>
+=======
+          </motion.div>
+        </motion.div>
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
 
         {/* Bottom Footer */}
         <div className="border-t border-gray-300 pt-8">
@@ -169,7 +277,11 @@ export function Footer({
                 you agree to our use of cookies and our Privacy Policy.
               </p>
               <p>
+<<<<<<< HEAD
                 Agentic View is committed to protecting your privacy and ensuring the security of your personal information. 
+=======
+                AgenticView is committed to protecting your privacy and ensuring the security of your personal information. 
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
                 We comply with applicable data protection regulations including GDPR and CCPA.
               </p>
               <p>

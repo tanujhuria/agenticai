@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+<<<<<<< HEAD
 import { ArrowUpRight, Search, UserPlus, Settings, Users } from 'lucide-react';
 import exampleImage from 'figma:asset/3275b16f3ae604d55381773e57c438d7eb411da8.png';
+=======
+import { ArrowUpRight, Search, UserPlus, Settings, Users, Code } from 'lucide-react';
+//import exampleImage from 'figma:asset/3275b16f3ae604d55381773e57c438d7eb411da8.png';
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
 
 interface PartnersDropdownProps {
   onNavigationClick: (page: string) => void;
@@ -22,8 +27,13 @@ export function PartnersDropdown({ onNavigationClick, isWhiteBackground, onMenuS
       title: 'Our Network',
       items: [
         { name: 'Find a Partner', page: 'find-partner', icon: Search },
+<<<<<<< HEAD
         { name: 'Become a Partner', page: 'become-partner', icon: UserPlus },
         { name: 'Technology Partners', page: 'technology-partners', icon: Settings },
+=======
+        { name: 'Technology Partners', page: 'technology-partners', icon: Code },
+        { name: 'Become a Partner', page: 'become-partner', icon: UserPlus },
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
         { name: 'System Integrators', page: 'system-integrators', icon: Users }
       ]
     },
@@ -39,10 +49,20 @@ export function PartnersDropdown({ onNavigationClick, isWhiteBackground, onMenuS
   const hoverBg = isWhiteBackground ? 'hover:bg-gray-100' : 'hover:bg-gray-900';
 
   return (
+<<<<<<< HEAD
     <div className="relative">
       <button
         onMouseEnter={() => handleMenuToggle(true)}
         onMouseLeave={() => handleMenuToggle(false)}
+=======
+    <div 
+      className="relative"
+      onMouseEnter={() => handleMenuToggle(true)}
+      onMouseLeave={() => handleMenuToggle(false)}
+    >
+      <button
+        onClick={() => onNavigationClick('partners')}
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
         className={`py-2 px-3 rounded-lg ${hoverBg} transition-colors text-sm`}
       >
         <span>Partners</span>
@@ -55,8 +75,11 @@ export function PartnersDropdown({ onNavigationClick, isWhiteBackground, onMenuS
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.2 }}
+<<<<<<< HEAD
             onMouseEnter={() => handleMenuToggle(true)}
             onMouseLeave={() => handleMenuToggle(false)}
+=======
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
             className="fixed top-[70px] left-0 right-0 w-full bg-white rounded-none shadow-2xl border-t-4 border-primary overflow-hidden z-50 dropdown-shadow"
           >
             <div className="max-w-7xl mx-auto px-8 py-8">

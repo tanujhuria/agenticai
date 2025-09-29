@@ -58,7 +58,11 @@ export function ContactPage() {
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-white">
       {/* Hero Section */}
       <motion.section 
+<<<<<<< HEAD
         className="pt-32 pb-20 px-6"
+=======
+        className="pt-24 pb-16 px-6"
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}

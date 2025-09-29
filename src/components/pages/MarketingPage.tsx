@@ -1,14 +1,26 @@
+<<<<<<< HEAD
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { ArrowUpRight, Play, Calendar, Zap, Target, TrendingUp, Users, Mail, BarChart3, CheckCircle, Star, Shield, Code, Lightbulb, Search } from 'lucide-react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 import { Button } from '../ui/button';
 import { Card, CardContent } from '../ui/card';
+=======
+import { useState, useEffect, useMemo } from 'react';
+import { 
+  ArrowUpRight, Play, Calendar, Zap, Target, TrendingUp, Users, 
+  BarChart3, CheckCircle, Star, Shield 
+} from 'lucide-react';
+import { ImageWithFallback } from '../figma/ImageWithFallback';
+import { Button } from '../ui/button';
+import { Card } from '../ui/card';
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
 
 export function MarketingPage() {
   const [activeTab, setActiveTab] = useState('campaign');
 
+<<<<<<< HEAD
   // Scroll to top on component mount
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -35,6 +47,10 @@ export function MarketingPage() {
   }, []);
 
   const benefits = [
+=======
+  // Memoize static data to prevent recreations
+  const benefits = useMemo(() => [
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
     {
       icon: Zap,
       title: "Faster Campaign Launch Cycles",
@@ -55,9 +71,15 @@ export function MarketingPage() {
       title: "Expert Insights",
       description: "Explore deep campaign insights and suggest new campaign tactics and optimization using natural language"
     }
+<<<<<<< HEAD
   ];
 
   const features = [
+=======
+  ], []);
+
+  const features = useMemo(() => [
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
     {
       icon: CheckCircle,
       title: "Pre-built and Ready to Deploy",
@@ -78,9 +100,15 @@ export function MarketingPage() {
       title: "Built on a Secure, Enterprise-Ready Foundation",
       description: "AVi's are trusted and secure, with robust governance, compliance and observability, and precise IT control for all AVi access and actions"
     }
+<<<<<<< HEAD
   ];
 
   const tabContent = {
+=======
+  ], []);
+
+  const tabContent = useMemo(() => ({
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
     campaign: {
       title: "Campaign AVi",
       description: "Campaign AVi autonomously analyzes, tests, optimizes, and delivers outbound email campaigns, shrinking campaign launch cycles from days to hours and ensuring your outbound efforts are highly personalized at scale."
@@ -89,6 +117,7 @@ export function MarketingPage() {
       title: "Lead AVi",
       description: "Lead AVi autonomously identifies and routes the right leads to the right reps fast, accelerating time to first meeting and driving higher lead conversion rates through intelligent lead scoring and prioritization."
     }
+<<<<<<< HEAD
   };
 
   return (
@@ -107,6 +136,26 @@ export function MarketingPage() {
               <h1 className="text-5xl md:text-6xl lg:text-7xl mb-8 leading-tight">
                 <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent gradient-text-animate">
                   Marketing Agentic View
+=======
+  }), []);
+
+  // Fast content loading - no delays
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero Section - Optimized */}
+      <section className="pt-24 pb-20 px-6 bg-gradient-to-br from-purple-50 to-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <div className="order-2 lg:order-1">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl mb-8 leading-tight">
+                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  Marketing AgenticView
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
                 </span>
               </h1>
               
@@ -116,12 +165,17 @@ export function MarketingPage() {
               
               <Button 
                 size="lg"
+<<<<<<< HEAD
                 className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-10 py-6 text-xl rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+=======
+                className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-10 py-6 text-xl rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
               >
                 <Calendar className="w-6 h-6 mr-3" />
                 Schedule a demo
                 <ArrowUpRight className="w-6 h-6 ml-3" />
               </Button>
+<<<<<<< HEAD
             </motion.div>
 
             {/* Right Image */}
@@ -178,12 +232,44 @@ export function MarketingPage() {
                 </motion.div>
               </div>
             </motion.div>
+=======
+            </div>
+
+            {/* Right Image */}
+            <div className="order-1 lg:order-2 relative">
+              <div className="relative group">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-2xl transform scale-110"></div>
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-purple-200">
+                    <ImageWithFallback
+                      src="https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                      alt="Marketing AVi Dashboard"
+                      className="w-full h-auto"
+                      loading="eager"
+                    />
+                  </div>
+                </div>
+                
+                {/* Floating Stats */}
+                <div className="absolute -bottom-8 -left-8 bg-white rounded-2xl shadow-xl p-6 border border-purple-100">
+                  <div className="text-3xl font-bold text-primary mb-2">87%</div>
+                  <div className="text-sm text-gray-600">Faster Campaigns</div>
+                </div>
+                
+                <div className="absolute -top-8 -right-8 bg-white rounded-2xl shadow-xl p-6 border border-purple-100">
+                  <div className="text-3xl font-bold text-primary mb-2">3.2x</div>
+                  <div className="text-sm text-gray-600">More Pipeline</div>
+                </div>
+              </div>
+            </div>
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
           </div>
         </div>
       </section>
 
       {/* What are Marketing AVi's Section */}
       <section className="py-24 px-6 bg-white">
+<<<<<<< HEAD
         <div className="max-w-4xl mx-auto text-center" data-animate>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -209,6 +295,26 @@ export function MarketingPage() {
       {/* Tabs Section */}
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto" data-animate>
+=======
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8 text-gray-900">
+            What are Marketing AVi's?
+          </h2>
+          <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-12">
+            Marketing AVi's are a suite of autonomous AI agents that rapidly launch and scale 
+            personalized, self-optimizing marketing campaigns - driving new leads and accelerating 
+            pipeline growth.
+          </p>
+          <h3 className="text-3xl md:text-4xl text-gray-900 mb-16">
+            Pre-built AVi's for Marketing
+          </h3>
+        </div>
+      </section>
+
+      {/* Tabs Section - Simplified */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-16 bg-white p-2 rounded-xl shadow-lg">
               <TabsTrigger 
@@ -226,6 +332,7 @@ export function MarketingPage() {
             </TabsList>
             
             <TabsContent value="campaign">
+<<<<<<< HEAD
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -309,20 +416,72 @@ export function MarketingPage() {
                   </div>
                 </motion.div>
               </motion.div>
+=======
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+                    {tabContent.campaign.title}
+                  </h3>
+                  <p className="text-xl text-gray-600 leading-relaxed">
+                    {tabContent.campaign.description}
+                  </p>
+                </div>
+                <div className="relative">
+                  <div className="relative rounded-2xl overflow-hidden border-4 border-primary shadow-2xl">
+                    <div className="aspect-video bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
+                      <div className="w-20 h-20 rounded-full border-4 border-primary flex items-center justify-center bg-white shadow-lg hover:scale-110 transition-transform cursor-pointer">
+                        <Play className="w-8 h-8 text-primary ml-1" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="lead">
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+                    {tabContent.lead.title}
+                  </h3>
+                  <p className="text-xl text-gray-600 leading-relaxed">
+                    {tabContent.lead.description}
+                  </p>
+                </div>
+                <div className="relative">
+                  <div className="relative rounded-2xl overflow-hidden border-4 border-primary shadow-2xl">
+                    <div className="aspect-video bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
+                      <div className="w-20 h-20 rounded-full border-4 border-primary flex items-center justify-center bg-white shadow-lg hover:scale-110 transition-transform cursor-pointer">
+                        <Play className="w-8 h-8 text-primary ml-1" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
             </TabsContent>
           </Tabs>
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* Benefits Section */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16" data-animate>
             <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8 text-gray-900 gradient-text-animate">
+=======
+      {/* Benefits Section - Optimized */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8 text-gray-900">
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
               Marketing AVi's Benefits
             </h2>
           </div>
 
+<<<<<<< HEAD
           <div className="grid md:grid-cols-2 gap-8" data-animate>
             {benefits.map((benefit, index) => (
               <motion.div
@@ -349,20 +508,51 @@ export function MarketingPage() {
                   </div>
                 </Card>
               </motion.div>
+=======
+          <div className="grid md:grid-cols-2 gap-8">
+            {benefits.map((benefit, index) => (
+              <Card 
+                key={index}
+                className="p-8 h-full border-purple-100 hover:border-purple-300 transition-all duration-300 hover:shadow-xl group"
+              >
+                <div className="flex items-start space-x-6">
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white flex-shrink-0">
+                    <benefit.icon className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-300">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-lg">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              </Card>
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
             ))}
           </div>
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* Features Section */}
       <section className="py-24 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16" data-animate>
             <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8 text-gray-900 gradient-text-animate">
+=======
+      {/* Features Section - Optimized */}
+      <section className="py-24 px-6 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8 text-gray-900">
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
               Marketing AVi's Features
             </h2>
           </div>
 
+<<<<<<< HEAD
           <div className="grid md:grid-cols-2 gap-8" data-animate>
             {features.map((feature, index) => (
               <motion.div
@@ -389,10 +579,33 @@ export function MarketingPage() {
                   </div>
                 </Card>
               </motion.div>
+=======
+          <div className="grid md:grid-cols-2 gap-8">
+            {features.map((feature, index) => (
+              <Card 
+                key={index}
+                className="p-8 h-full border-purple-100 hover:border-purple-300 transition-all duration-300 hover:shadow-xl group"
+              >
+                <div className="flex items-start space-x-6">
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white flex-shrink-0">
+                    <feature.icon className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-300">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-lg">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              </Card>
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
             ))}
           </div>
         </div>
       </section>
+<<<<<<< HEAD
 
       {/* CTA Section */}
       <section className="py-24 px-6 bg-gradient-to-br from-purple-50 to-white">
@@ -433,6 +646,8 @@ export function MarketingPage() {
           </motion.div>
         </div>
       </section>
+=======
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
     </div>
   );
 }

@@ -17,6 +17,16 @@
         'next-themes@0.4.6': 'next-themes',
         'lucide-react@0.487.0': 'lucide-react',
         'input-otp@1.4.2': 'input-otp',
+<<<<<<< HEAD
+=======
+        'figma:asset/dfecb9215b2e7b6e03069e29bb58d61bebe06d90.png': path.resolve(__dirname, './src/assets/dfecb9215b2e7b6e03069e29bb58d61bebe06d90.png'),
+        'figma:asset/cd40fc1605ed92cc1ab4808145e7e4380b74bf92.png': path.resolve(__dirname, './src/assets/cd40fc1605ed92cc1ab4808145e7e4380b74bf92.png'),
+        'figma:asset/bd28315832c77c36328805e69c07a718c6c222cc.png': path.resolve(__dirname, './src/assets/bd28315832c77c36328805e69c07a718c6c222cc.png'),
+        'figma:asset/b3e97e516c2fd3c7c6c9a48cd9801dd14bafcf60.png': path.resolve(__dirname, './src/assets/b3e97e516c2fd3c7c6c9a48cd9801dd14bafcf60.png'),
+        'figma:asset/b0823fc5eed74c3e55f8508f033d24ceba1490e1.png': path.resolve(__dirname, './src/assets/b0823fc5eed74c3e55f8508f033d24ceba1490e1.png'),
+        'figma:asset/a36b397124b0832ad70b8e5f755a4d10b45ea3c1.png': path.resolve(__dirname, './src/assets/a36b397124b0832ad70b8e5f755a4d10b45ea3c1.png'),
+        'figma:asset/684254f917d52ad25e1f1ddfd11b581b0fde1b90.png': path.resolve(__dirname, './src/assets/684254f917d52ad25e1f1ddfd11b581b0fde1b90.png'),
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
         'figma:asset/3275b16f3ae604d55381773e57c438d7eb411da8.png': path.resolve(__dirname, './src/assets/3275b16f3ae604d55381773e57c438d7eb411da8.png'),
         'embla-carousel-react@8.6.0': 'embla-carousel-react',
         'cmdk@1.1.1': 'cmdk',

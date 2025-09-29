@@ -1,5 +1,9 @@
 import { motion } from 'motion/react';
 import { Bot, Zap, Shield, BarChart3, Users, Workflow } from 'lucide-react';
+<<<<<<< HEAD
+=======
+import { NetworkBackground } from './NetworkBackground';
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
 
 const sections = [
   {
@@ -52,9 +56,27 @@ interface ContentSectionsProps {
 
 export function ContentSections({ onTrialClick = () => {} }: ContentSectionsProps) {
   return (
+<<<<<<< HEAD
     <section className="bg-gray-50 py-16 sm:py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 sm:mb-16">
+=======
+    <section className="relative bg-gradient-to-b from-gray-50 to-white py-12 sm:py-16 px-6 overflow-hidden">
+      {/* Subtle Network Background */}
+      <NetworkBackground 
+        className="absolute inset-0"
+        nodeCount={25}
+        maxDistance={100}
+        nodeColor="#8b5cf6"
+        lineColor="#a855f7"
+        nodeSize={1}
+        animationSpeed={0.2}
+        opacity={0.2}
+      />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-8 sm:mb-12">
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
           {/* Decorative line above title */}
           <div className="flex items-center justify-center mb-8">
             <div className="h-px bg-gradient-to-r from-transparent via-primary to-transparent w-32"></div>
@@ -101,7 +123,11 @@ export function ContentSections({ onTrialClick = () => {} }: ContentSectionsProp
 
 
         {/* Additional sections (hidden initially) */}
+<<<<<<< HEAD
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-12">
+=======
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-8">
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
           {sections.slice(3).map((section, index) => (
             <motion.div
               key={index + 3}
@@ -123,7 +149,11 @@ export function ContentSections({ onTrialClick = () => {} }: ContentSectionsProp
         </div>
 
         {/* Load More Button */}
+<<<<<<< HEAD
         <div className="text-center mt-12">
+=======
+        <div className="text-center mt-8">
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
           <button 
             onClick={onTrialClick}
             className="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-lg hover:scale-105 transition-all duration-300"

@@ -71,10 +71,20 @@ export function SolutionsDropdown({ onNavigationClick, isWhiteBackground, onMenu
   const hoverBg = isWhiteBackground ? 'hover:bg-gray-100' : 'hover:bg-gray-900';
 
   return (
+<<<<<<< HEAD
     <div className="relative">
       <button
         onMouseEnter={() => handleMenuToggle(true)}
         onMouseLeave={() => handleMenuToggle(false)}
+=======
+    <div 
+      className="relative"
+      onMouseEnter={() => handleMenuToggle(true)}
+      onMouseLeave={() => handleMenuToggle(false)}
+    >
+      <button
+        onClick={() => onNavigationClick('solutions')}
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
         className={`py-2 px-3 rounded-lg ${hoverBg} transition-colors text-sm`}
       >
         <span>Solutions</span>
@@ -87,8 +97,11 @@ export function SolutionsDropdown({ onNavigationClick, isWhiteBackground, onMenu
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.2 }}
+<<<<<<< HEAD
             onMouseEnter={() => handleMenuToggle(true)}
             onMouseLeave={() => handleMenuToggle(false)}
+=======
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
             className="fixed top-[70px] left-0 right-0 w-full bg-white rounded-none shadow-2xl border-t-4 border-primary overflow-hidden z-50 dropdown-shadow"
           >
             <div className="max-w-7xl mx-auto px-8 py-8">
@@ -128,7 +141,11 @@ export function SolutionsDropdown({ onNavigationClick, isWhiteBackground, onMenu
                   ))}
                 </motion.div>
 
+<<<<<<< HEAD
                 {/* By Function Column */}
+=======
+                {/* By Industry Column - Now 2nd */}
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -136,6 +153,37 @@ export function SolutionsDropdown({ onNavigationClick, isWhiteBackground, onMenu
                   className="space-y-1"
                 >
                   <h3 className="text-sm font-bold text-gray-900 mb-4 uppercase tracking-wide">
+<<<<<<< HEAD
+=======
+                    {solutionsData.byIndustry.title}
+                  </h3>
+                  <div className="w-full h-px bg-gray-200 mb-4"></div>
+                  {solutionsData.byIndustry.items.map((item, index) => (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        onNavigationClick(item.page);
+                        handleMenuToggle(false);
+                      }}
+                      className="flex items-start space-x-3 w-full text-left py-2 px-3 rounded-lg hover:bg-purple-50 hover:text-primary transition-all duration-200 group"
+                    >
+                      <item.icon className="w-4 h-4 mt-0.5 text-primary flex-shrink-0" />
+                      <span className="text-sm text-gray-700 group-hover:text-primary font-medium">
+                        {item.name}
+                      </span>
+                    </button>
+                  ))}
+                </motion.div>
+
+                {/* By Function Column - Now 3rd */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.3 }}
+                  className="space-y-1"
+                >
+                  <h3 className="text-sm font-bold text-gray-900 mb-4 uppercase tracking-wide">
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
                     {solutionsData.byFunction.title}
                   </h3>
                   <div className="w-full h-px bg-gray-200 mb-4"></div>
@@ -156,11 +204,19 @@ export function SolutionsDropdown({ onNavigationClick, isWhiteBackground, onMenu
                   ))}
                 </motion.div>
 
+<<<<<<< HEAD
                 {/* By Use Case Column */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.3 }}
+=======
+                {/* By Use Case Column - Now 4th */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.4 }}
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
                   className="space-y-1"
                 >
                   <h3 className="text-sm font-bold text-gray-900 mb-4 uppercase tracking-wide">
@@ -190,6 +246,7 @@ export function SolutionsDropdown({ onNavigationClick, isWhiteBackground, onMenu
                     </button>
                   ))}
                 </motion.div>
+<<<<<<< HEAD
 
                 {/* By Industry Column */}
                 <motion.div 
@@ -218,6 +275,8 @@ export function SolutionsDropdown({ onNavigationClick, isWhiteBackground, onMenu
                     </button>
                   ))}
                 </motion.div>
+=======
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
               </div>
             </div>
           </motion.div>

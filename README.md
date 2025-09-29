@@ -8,4 +8,8 @@
   Run `npm i` to install the dependencies.
 
   Run `npm run dev` to start the development server.
+<<<<<<< HEAD
   # agenticai
+=======
+  
+>>>>>>> e35854f (Whole new code so many changes which are not pushed)
