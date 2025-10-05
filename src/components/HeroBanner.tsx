@@ -28,8 +28,8 @@ export function HeroBanner({ onTrialClick, onTalkToSalesClick }: HeroBannerProps
       
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Main Heading */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-5 leading-tight text-gray-900">
-          <span className="gradient-text-animate">AVi: Agentic copilots built for business.</span>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-5 leading-tight bg-gradient-to-r from-gray-900 via-primary to-secondary bg-clip-text text-transparent">
+          AVi: Agentic copilots built for business.
         </h1>
 
         {/* Subheading */}
