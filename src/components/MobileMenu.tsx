@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ChevronRight, ArrowUpRight, Globe, Mail } from 'lucide-react';
+import { X, ChevronRight, ArrowUpRight, Mail } from 'lucide-react';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -41,9 +41,10 @@ const menuItems: MenuItem[] = [
     page: 'platform',
     description: 'Comprehensive AI platform',
     items: [
+      { name: 'AgenticView One Platform', page: 'platform' },
       { name: 'The AgenticView ONE Advantage', page: 'platform-advantage' },
       { name: 'Why AgenticView', page: 'why-avis' },
-      { name: 'Connectivity', page: 'connectors' },
+{ name: 'Integration', page: 'integration' },
       { name: 'Enterprise-Grade Security', page: 'security' },
       { name: 'Pricing', page: 'pricing' },
       { name: 'Enterprise Search', page: 'enterprise-search' },
@@ -142,6 +143,8 @@ export function HamburgerButton({
   const buttonClass = isWhiteBackground
     ? 'text-primary hover:bg-primary/10'
     : 'text-primary hover:bg-primary/20';
+  // Explicit line color and height to ensure visibility on all backgrounds
+  const lineColor = isWhiteBackground ? '#6b21a8' : '#ffffff';
 
   return (
     <button
@@ -149,19 +152,22 @@ export function HamburgerButton({
       className={`lg:hidden relative p-2 rounded-lg transition-all duration-300 z-50 ${buttonClass}`}
       aria-label="Toggle mobile menu"
     >
-      <div className="w-6 h-5 relative flex flex-col justify-between">
+      <div className="w-6 h-5 relative flex flex-col justify-between" aria-hidden="true">
         <motion.span
-          className="block h-0.5 w-full bg-current origin-center"
+          className="block w-full origin-center"
+          style={{ height: '2px', backgroundColor: lineColor }}
           animate={isOpen ? { rotate: 45, y: 9 } : { rotate: 0, y: 0 }}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
         />
         <motion.span
-          className="block h-0.5 w-full bg-current"
+          className="block w-full"
+          style={{ height: '2px', backgroundColor: lineColor }}
           animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
           transition={{ duration: 0.2 }}
         />
         <motion.span
-          className="block h-0.5 w-full bg-current origin-center"
+          className="block w-full origin-center"
+          style={{ height: '2px', backgroundColor: lineColor }}
           animate={isOpen ? { rotate: -45, y: -9 } : { rotate: 0, y: 0 }}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
         />
@@ -303,10 +309,6 @@ export function MobileMenu({
 
               {/* Actions */}
               <div className="mt-8 space-y-3 border-t border-gray-200 pt-6">
-                <button className="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
-                  <Globe className="w-5 h-5 text-gray-600" />
-                  <span className="text-gray-700">Language</span>
-                </button>
 
                 {/* Request Demo */}
                 <button

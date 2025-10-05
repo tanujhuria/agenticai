@@ -1,16 +1,13 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Calendar, Users, Building, Mail, CheckCircle, Zap, Shield, Headphones } from 'lucide-react';
+import { Calendar, Users, Building, Mail, CheckCircle, Shield, Headphones, Phone } from 'lucide-react';
 import { Header } from './Header';
+import { Footer } from './Footer';
 
 interface GetTrialPageProps {
   onBack: () => void;
 }
 
-const companies = [
-  'Microsoft', 'Google', 'Amazon', 'Apple', 'Meta', 'Salesforce', 
-  'Adobe', 'Netflix', 'PayPal', 'Shopify', 'Zoom', 'Slack'
-];
 
 export function GetTrialPage({ onBack }: GetTrialPageProps) {
   const [formData, setFormData] = useState({
@@ -19,6 +16,18 @@ export function GetTrialPage({ onBack }: GetTrialPageProps) {
     company: '',
     phone: ''
   });
+  const [errors, setErrors] = useState<{ name?: string; email?: string; company?: string; phone?: string }>({});
+
+  const freeEmailDomains = new Set([
+    'gmail.com','yahoo.com','hotmail.com','outlook.com','live.com','msn.com','aol.com','icloud.com','me.com','mac.com','protonmail.com','pm.me','yandex.com','mail.ru','gmx.com','zoho.com','fastmail.com'
+  ]);
+
+  const isBusinessEmail = (email: string) => {
+    const match = email.toLowerCase().match(/^([a-z0-9._%+-]+)@([a-z0-9.-]+\.[a-z]{2,})$/i);
+    if (!match) return false;
+    const domain = match[2];
+    return !freeEmailDomains.has(domain);
+  };
 
   const handleDummyClick = () => {
     console.log('Demo functionality');
@@ -26,14 +35,74 @@ export function GetTrialPage({ onBack }: GetTrialPageProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
+
+    const newErrors: { name?: string; email?: string; company?: string; phone?: string } = {};
+
+    const nameVal = formData.name.trim();
+    const emailVal = formData.email.trim();
+    const companyVal = formData.company.trim();
+    const phoneVal = formData.phone.trim();
+
+    if (!nameVal) {
+      newErrors.name = 'Full name is required';
+    } else if (!/^[A-Za-z\s]+$/.test(nameVal)) {
+      newErrors.name = 'Name should contain only letters and spaces';
+    }
+
+    if (!emailVal) {
+      newErrors.email = 'Business email is required';
+    } else if (!/^([a-z0-9._%+-]+)@([a-z0-9.-]+\.[a-z]{2,})$/i.test(emailVal)) {
+      newErrors.email = 'Please enter a valid email address';
+    } else if (!isBusinessEmail(emailVal)) {
+      newErrors.email = 'Please enter a valid business email (personal domains are not accepted)';
+    }
+
+    if (!companyVal) {
+      newErrors.company = 'Company name is required';
+    }
+
+    const digitsOnly = phoneVal.replace(/\D/g, '');
+    if (!digitsOnly) {
+      newErrors.phone = 'Phone number is required';
+    } else if (digitsOnly.length !== 10) {
+      newErrors.phone = 'Phone number must be exactly 10 digits';
+    }
+
+    setErrors(newErrors);
+    if (Object.keys(newErrors).length > 0) return;
+
+    // All good — submit
     console.log('Form submitted:', formData);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    if (name === 'name') {
+      const cleaned = value.replace(/[^a-zA-Z\s]/g, '');
+      setFormData({ ...formData, name: cleaned });
+      if (errors.name) setErrors({ ...errors, name: undefined });
+      return;
+    }
+
+    if (name === 'phone') {
+      const digits = value.replace(/\D/g, '').slice(0, 10);
+      setFormData({ ...formData, phone: digits });
+      if (errors.phone) setErrors({ ...errors, phone: undefined });
+      return;
+    }
+
+    if (name === 'email' && errors.email) {
+      setErrors({ ...errors, email: undefined });
+    }
+
+    if (name === 'company' && errors.company) {
+      setErrors({ ...errors, company: undefined });
+    }
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
     });
   };
 
@@ -61,7 +130,7 @@ export function GetTrialPage({ onBack }: GetTrialPageProps) {
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
               <span className="text-gray-900">Request your</span>
-              <span className="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent gradient-text-animate">
+              <span className="block gradient-text-animate">
                 personalized demo
               </span>
             </h1>
@@ -83,10 +152,10 @@ export function GetTrialPage({ onBack }: GetTrialPageProps) {
                 <p className="text-gray-600 text-lg">Fill out the form below and we'll get back to you within 24 hours.</p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} noValidate className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-lg text-gray-700 mb-3">
-                    Full Name *
+<label htmlFor="name" className="block text-lg text-gray-700 mb-3">
+                    Full Name <span className="text-red-700">*</span>
                   </label>
                   <div className="relative">
                     <Users className="absolute left-4 top-1/2 transform -translate-y-1/2 text-primary w-5 h-5" />
@@ -94,18 +163,20 @@ export function GetTrialPage({ onBack }: GetTrialPageProps) {
                       type="text"
                       id="name"
                       name="name"
-                      required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors text-lg"
+                      className="w-full pl-12 pr-4 py-3 sm:py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors text-base sm:text-lg placeholder-gray-500 placeholder-mobile-0_9rem"
                       placeholder="Enter your full name"
                     />
                   </div>
+                  {errors.name && (
+                    <p className="mt-2 text-sm text-red-700">{errors.name}</p>
+                  )}
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-lg text-gray-700 mb-3">
-                    Business Email *
+<label htmlFor="email" className="block text-lg text-gray-700 mb-3">
+                    Business Email <span className="text-red-700">*</span>
                   </label>
                   <div className="relative">
                     <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-primary w-5 h-5" />
@@ -113,18 +184,45 @@ export function GetTrialPage({ onBack }: GetTrialPageProps) {
                       type="email"
                       id="email"
                       name="email"
-                      required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors text-lg"
+                      className="w-full pl-12 pr-4 py-3 sm:py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors text-base sm:text-lg placeholder-gray-500 placeholder-mobile-0_9rem"
                       placeholder="Enter your business email"
                     />
                   </div>
+                  {errors.email && (
+                    <p id="email-error" className="mt-2 text-sm text-red-700">
+                      {errors.email}
+                    </p>
+                  )}
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-lg text-gray-700 mb-3">
+                    Phone Number <span className="text-red-700">*</span>
+                  </label>
+                  <div className="relative">
+                    <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-primary w-5 h-5" />
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      inputMode="numeric"
+                      pattern="[0-9]*"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full pl-12 pr-4 py-3 sm:py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors text-base sm:text-lg placeholder-gray-500 placeholder-mobile-0_9rem"
+                      placeholder="Enter your phone number"
+                    />
+                  </div>
+                  {errors.phone && (
+                    <p className="mt-2 text-sm text-red-700">{errors.phone}</p>
+                  )}
                 </div>
 
                 <div>
                   <label htmlFor="company" className="block text-lg text-gray-700 mb-3">
-                    Company Name *
+                    Company Name <span className="text-red-700">*</span>
                   </label>
                   <div className="relative">
                     <Building className="absolute left-4 top-1/2 transform -translate-y-1/2 text-primary w-5 h-5" />
@@ -132,28 +230,15 @@ export function GetTrialPage({ onBack }: GetTrialPageProps) {
                       type="text"
                       id="company"
                       name="company"
-                      required
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors text-lg"
+                      className="w-full pl-12 pr-4 py-3 sm:py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors text-base sm:text-lg placeholder-gray-500 placeholder-mobile-0_9rem"
                       placeholder="Enter your company name"
                     />
                   </div>
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-lg text-gray-700 mb-3">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors text-lg"
-                    placeholder="Enter your phone number"
-                  />
+                  {errors.company && (
+                    <p className="mt-2 text-sm text-red-700">{errors.company}</p>
+                  )}
                 </div>
 
                 <button
@@ -179,10 +264,6 @@ export function GetTrialPage({ onBack }: GetTrialPageProps) {
                   <li className="flex items-start space-x-4">
                     <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
                     <span className="text-gray-700 text-lg">Personalized 30-minute demo tailored to your use case</span>
-                  </li>
-                  <li className="flex items-start space-x-4">
-                    <Zap className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
-                    <span className="text-gray-700 text-lg">Free 14-day trial with full platform access</span>
                   </li>
                   <li className="flex items-start space-x-4">
                     <Shield className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
@@ -225,30 +306,10 @@ export function GetTrialPage({ onBack }: GetTrialPageProps) {
             </motion.div>
           </div>
 
-          {/* Company Logos */}
-          <motion.div
-            className="mt-20 text-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            <p className="text-gray-600 mb-8 text-lg">Trusted by leading companies worldwide</p>
-            <div className="flex flex-wrap justify-center items-center gap-6">
-              {companies.map((company, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                  className="px-6 py-3 bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow"
-                >
-                  <span className="text-gray-700 font-medium">{company}</span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </div>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

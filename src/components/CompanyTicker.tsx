@@ -7,11 +7,8 @@ const companies = [
 
 export function CompanyTicker() {
   return (
-<<<<<<< HEAD
-    <section className="bg-gradient-to-r from-purple-600 to-purple-700 py-8 border-t border-purple-500">
-=======
+
     <section className="bg-gradient-to-r from-purple-600 to-purple-700 py-6 border-t border-purple-500">
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
       <div className="overflow-hidden">
         <motion.div
           className="flex space-x-8 whitespace-nowrap"

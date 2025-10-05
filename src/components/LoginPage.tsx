@@ -5,11 +5,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Separator } from './ui/separator';
-<<<<<<< HEAD
-=======
-import logoTextImg from 'figma:asset/a36b397124b0832ad70b8e5f755a4d10b45ea3c1.png';
-import logoIconImg from 'figma:asset/bd28315832c77c36328805e69c07a718c6c222cc.png';
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
+import { logoIconImg, logoTextImg } from '../assets';
 
 interface LoginPageProps {
   onBack: () => void;
@@ -47,29 +43,16 @@ export function LoginPage({ onBack, onTrialClick, onTalkToSalesClick }: LoginPag
             onClick={onBack}
             className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
           >
-<<<<<<< HEAD
-            <div 
-              className="w-10 h-10 rounded-lg flex items-center justify-center text-xl font-bold"
-              style={{ 
-                background: 'linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%)',
-                color: '#fff'
-              }}
-            >
-              A
-            </div>
-            <span className="text-xl font-medium text-gray-900">AVi's</span>
-=======
             <img 
               src={logoIconImg}
-              alt="Agentic View Logo"
+              alt="AgenticView Logo"
               className="w-10 h-10"
             />
             <img 
               src={logoTextImg}
-              alt="Agentic View"
+              alt="AgenticView"
               className="h-8 w-auto"
             />
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
           </button>
 
           {/* Talk to Sales */}
@@ -116,16 +99,12 @@ export function LoginPage({ onBack, onTrialClick, onTalkToSalesClick }: LoginPag
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center mx-auto mb-4"
-              >
-<<<<<<< HEAD
-                <span className="text-2xl text-white font-bold">A</span>
-=======
+>
                 <img 
                   src={logoIconImg}
-                  alt="Agentic View Logo"
+                  alt="AgenticView Logo"
                   className="w-10 h-10"
                 />
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
               </motion.div>
               
               <motion.h1
@@ -143,11 +122,7 @@ export function LoginPage({ onBack, onTrialClick, onTalkToSalesClick }: LoginPag
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-gray-600"
               >
-<<<<<<< HEAD
-                Sign in to your AVi's account
-=======
-                Sign in to your Agentic View account
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
+                Sign in to your AgenticView account
               </motion.p>
             </div>
 

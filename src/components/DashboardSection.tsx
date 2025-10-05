@@ -1,15 +1,6 @@
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-<<<<<<< HEAD
 
-export function DashboardSection() {
-  return (
-    <section className="bg-white py-20 px-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Header Text */}
-        <motion.div
-          className="text-center mb-12"
-=======
 import { NetworkBackground } from './NetworkBackground';
 
 export function DashboardSection() {
@@ -31,7 +22,6 @@ export function DashboardSection() {
         {/* Header Text */}
         <motion.div
           className="text-center mb-8"
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -52,21 +42,13 @@ export function DashboardSection() {
         >
           <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-200">
             {/* Mock Dashboard Interface */}
-<<<<<<< HEAD
-            <div className="p-8">
-              {/* Dashboard Header */}
-              <div className="flex items-center justify-between mb-8">
-                <div>
-                  <h3 className="text-gray-900 text-2xl font-semibold mb-2">
-                    Workato ONE Dashboard
-=======
+
             <div className="p-6">
               {/* Dashboard Header */}
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <h3 className="text-gray-900 text-2xl font-semibold mb-2">
-                    Agentic View ONE Dashboard
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
+                    AgenticView ONE Dashboard
                   </h3>
                   <p className="text-gray-600">
                     Complete platform interface showing multiple AVi's working together
@@ -114,11 +96,8 @@ export function DashboardSection() {
 
               {/* Bottom Activity Feed */}
               <motion.div 
-<<<<<<< HEAD
-                className="mt-8 bg-white rounded-xl p-6 border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all duration-300"
-=======
+
                 className="mt-6 bg-white rounded-xl p-4 border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all duration-300"
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
@@ -160,11 +139,8 @@ export function DashboardSection() {
 
         {/* Bottom Text */}
         <motion.div
-<<<<<<< HEAD
-          className="text-center mt-12"
-=======
+
           className="text-center mt-8"
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}

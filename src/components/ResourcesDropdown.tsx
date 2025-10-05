@@ -62,12 +62,7 @@ export function ResourcesDropdown({ onNavigationClick, isWhiteBackground, onMenu
   const hoverBg = isWhiteBackground ? 'hover:bg-gray-100' : 'hover:bg-gray-900';
 
   return (
-<<<<<<< HEAD
-    <div className="relative">
-      <button
-        onMouseEnter={() => handleMenuToggle(true)}
-        onMouseLeave={() => handleMenuToggle(false)}
-=======
+
     <div 
       className="relative"
       onMouseEnter={() => handleMenuToggle(true)}
@@ -75,7 +70,6 @@ export function ResourcesDropdown({ onNavigationClick, isWhiteBackground, onMenu
     >
       <button
         onClick={() => onNavigationClick('resources')}
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
         className={`py-2 px-3 rounded-lg ${hoverBg} transition-colors text-sm`}
       >
         <span>Resources</span>
@@ -88,11 +82,7 @@ export function ResourcesDropdown({ onNavigationClick, isWhiteBackground, onMenu
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.2 }}
-<<<<<<< HEAD
-            onMouseEnter={() => handleMenuToggle(true)}
-            onMouseLeave={() => handleMenuToggle(false)}
-=======
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
+
             className="fixed top-[70px] left-0 right-0 w-full bg-white rounded-none shadow-2xl border-t-4 border-primary overflow-hidden z-50 dropdown-shadow"
           >
             <div className="max-w-7xl mx-auto px-8 py-8">
@@ -205,14 +195,11 @@ export function ResourcesDropdown({ onNavigationClick, isWhiteBackground, onMenu
                     ))}
                   </div>
                   
-<<<<<<< HEAD
-                  <button
-=======
+
                   <motion.button
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.7 }}
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
                     onClick={() => {
                       onNavigationClick('all-case-studies');
                       handleMenuToggle(false);
@@ -224,11 +211,8 @@ export function ResourcesDropdown({ onNavigationClick, isWhiteBackground, onMenu
                       View all case studies
                     </span>
                     <ArrowUpRight className="w-3 h-3 text-primary" />
-<<<<<<< HEAD
-                  </button>
-=======
+
                   </motion.button>
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
                 </motion.div>
               </div>
             </div>

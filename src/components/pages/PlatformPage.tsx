@@ -1,80 +1,6 @@
-<<<<<<< HEAD
-import { motion } from 'motion/react';
-import { Cpu, Zap, Shield, Globe, Layers, BarChart3, Settings, Cloud, Database, Lock } from 'lucide-react';
 
-const platformFeatures = [
-  {
-    icon: <Cpu className="w-8 h-8" />,
-    title: "Advanced AI Engine",
-    description: "Powered by state-of-the-art machine learning models and neural networks",
-    details: ["GPT-4 Integration", "Custom Model Training", "Real-time Processing", "Multi-modal AI"]
-  },
-  {
-    icon: <Cloud className="w-8 h-8" />,
-    title: "Cloud-Native Architecture", 
-    description: "Scalable, reliable, and secure cloud infrastructure built for enterprise",
-    details: ["Auto-scaling", "99.99% Uptime", "Global CDN", "Edge Computing"]
-  },
-  {
-    icon: <Database className="w-8 h-8" />,
-    title: "Unified Data Platform",
-    description: "Centralized data management with real-time analytics and insights",
-    details: ["Data Lakes", "Stream Processing", "Advanced Analytics", "Data Governance"]
-  },
-  {
-    icon: <Shield className="w-8 h-8" />,
-    title: "Enterprise Security",
-    description: "Bank-grade security with end-to-end encryption and compliance",
-    details: ["SOC 2 Certified", "GDPR Compliant", "Zero Trust", "Audit Trails"]
-  },
-  {
-    icon: <Layers className="w-8 h-8" />,
-    title: "Modular Architecture",
-    description: "Flexible, composable platform that adapts to your business needs",
-    details: ["Microservices", "API-First", "Plugin System", "Custom Integrations"]
-  },
-  {
-    icon: <BarChart3 className="w-8 h-8" />,
-    title: "Advanced Analytics",
-    description: "Deep insights and predictive analytics powered by AI",
-    details: ["Predictive Models", "Real-time Dashboards", "Custom Reports", "ML Insights"]
-  }
-];
-
-const integrations = [
-  "Salesforce", "HubSpot", "Microsoft 365", "Google Workspace", "Slack", "Jira",
-  "ServiceNow", "Zendesk", "AWS", "Azure", "Shopify", "SAP", "Oracle", "MongoDB",
-  "PostgreSQL", "Redis", "Kafka", "Elasticsearch"
-];
-
-const architectureLayers = [
-  {
-    name: "AI & ML Layer",
-    description: "Advanced machine learning models and AI processing engines",
-    color: "from-purple-500 to-indigo-600"
-  },
-  {
-    name: "Application Layer", 
-    description: "Business logic, workflows, and application services",
-    color: "from-blue-500 to-cyan-600"
-  },
-  {
-    name: "API & Integration Layer",
-    description: "RESTful APIs, webhooks, and third-party integrations",
-    color: "from-green-500 to-teal-600"
-  },
-  {
-    name: "Data & Storage Layer",
-    description: "Distributed databases, data lakes, and caching systems",
-    color: "from-orange-500 to-red-600"
-  },
-  {
-    name: "Infrastructure Layer",
-    description: "Cloud infrastructure, containers, and orchestration",
-    color: "from-gray-600 to-slate-700"
-=======
 import { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { 
   Users, 
   Shield, 
@@ -105,10 +31,10 @@ interface Section {
 
 const sections: Section[] = [
   { id: 'hero', title: 'Platform Overview', subtitle: 'Leading Agentic-Orchestration Platform' },
-  { id: 'genies', title: 'Agentic View Genies', subtitle: 'Prebuilt AI Agents' },
-  { id: 'go', title: 'Agentic View GO', subtitle: 'Intelligent Starting Point' },
-  { id: 'agentic', title: 'Agentic View Agentic', subtitle: 'Enterprise Agent Studio' },
-  { id: 'orchestrate', title: 'Agentic View Orchestrate', subtitle: 'Unified Orchestration Platform' },
+  { id: 'genies', title: "AgenticView AVi's", subtitle: 'Prebuilt AI Agents' },
+  { id: 'go', title: 'AgenticView GO', subtitle: 'Intelligent Starting Point' },
+  { id: 'agentic', title: 'AgenticView Agentic', subtitle: 'Enterprise Agent Studio' },
+  { id: 'orchestrate', title: 'AgenticView Orchestrate', subtitle: 'Unified Orchestration Platform' },
   { id: 'connectivity', title: 'Universal Connectivity', subtitle: 'Connect Everything' },
   { id: 'enterprise', title: 'Enterprise Grade', subtitle: 'Built for Mission-Critical Operations' }
 ];
@@ -118,60 +44,66 @@ const genieCategories = [
     id: 'cx',
     icon: <Users className="w-8 h-8" />,
     title: 'Customer Experience',
-    description: 'Use Genies to capture feedback, tailor content, and guide onboarding — ensuring consistent, high-quality customer experiences at scale.',
+    description: "Use AVi's to capture feedback, tailor content, and guide onboarding — ensuring consistent, high-quality customer experiences at scale.",
     gradient: 'from-blue-500 to-cyan-600'
   },
   {
     id: 'hr',
     icon: <Users className="w-8 h-8" />,
     title: 'HR & Recruiting',
-    description: 'Genies streamline the employee journey — sourcing candidates, guiding onboarding, and answering HR questions instantly.',
+    description: "AVi's streamline the employee journey — sourcing candidates, guiding onboarding, and answering HR questions instantly.",
     gradient: 'from-green-500 to-emerald-600'
   },
   {
     id: 'it',
     icon: <Shield className="w-8 h-8" />,
     title: 'IT & Security',
-    description: 'Let Genies handle routine IT tasks — from password resets to system escalations — so users get faster help and IT gets time back.',
+    description: "Let AVi's handle routine IT tasks — from password resets to system escalations — so users get faster help and IT gets time back.",
     gradient: 'from-red-500 to-pink-600'
   },
   {
     id: 'marketing',
     icon: <TrendingUp className="w-8 h-8" />,
     title: 'Marketing',
-    description: 'Accelerate pipeline with Genies that identify leads, personalize outreach, and launch campaigns — automatically and at scale.',
+    description: "Accelerate pipeline with AVi's that identify leads, personalize outreach, and launch campaigns — automatically and at scale.",
     gradient: 'from-purple-500 to-indigo-600'
   },
   {
     id: 'sales',
     icon: <BarChart3 className="w-8 h-8" />,
     title: 'Sales',
-    description: 'Empower reps with Genies that handle research, CRM updates, and follow-ups — so they can focus on selling, not admin.',
+    description: "Empower reps with AVi's that handle research, CRM updates, and follow-ups — so they can focus on selling, not admin.",
     gradient: 'from-orange-500 to-red-600'
   },
   {
     id: 'support',
     icon: <HeadphonesIcon className="w-8 h-8" />,
     title: 'Support',
-    description: 'Deploy Genies that resolve common issues, surface knowledge, and keep systems updated — so human agents can focus on the tough stuff.',
+    description: "Deploy AVi's that resolve common issues, surface knowledge, and keep systems updated — so human agents can focus on the tough stuff.",
     gradient: 'from-teal-500 to-cyan-600'
   }
 ];
 
 const goFeatures = [
   {
+    id: 'search',
+    size: 'lg',
     icon: <Search className="w-8 h-8" />,
     title: 'Enterprise Search',
     description: 'Find what you actually need — not just links. Search across 10,000+ apps, data sources, and real-time content in a single, secure experience.',
     gradient: 'from-blue-500 to-purple-600'
   },
   {
+    id: 'assistant',
+    size: 'sm',
     icon: <Bot className="w-8 h-8" />,
     title: 'Employee Assistant',
     description: 'AI-powered help desk for everyone. From PTO to IT to procurement, employee assistants handle requests and resolve issues fast.',
     gradient: 'from-green-500 to-blue-600'
   },
   {
+    id: 'deep',
+    size: 'sm',
     icon: <Zap className="w-8 h-8" />,
     title: 'Deep Action™',
     description: 'Go beyond chat. Deploy agents that can update records, trigger workflows, and orchestrate real business outcomes — instantly and securely.',
@@ -200,7 +132,7 @@ const agenticFeatures = [
   },
   {
     icon: <Workflow className="w-8 h-8" />,
-    title: 'Agentic View MCP',
+    title: 'AgenticView MCP',
     description: 'Model Context Protocol lets agents act safely across your stack — with 10,000+ integrations, execution context, and full auditability.',
     gradient: 'from-orange-500 to-red-600'
   },
@@ -251,7 +183,7 @@ const orchestrateFeatures = [
   },
   {
     icon: <Zap className="w-8 h-8" />,
-    title: 'Agentic View AIRO™',
+    title: 'AgenticView AIRO™',
     description: 'Your AI copilot to build faster and run smarter — with real-time diagnostics, smart suggestions, and guided optimization at every step.',
     gradient: 'from-primary to-secondary'
   }
@@ -300,7 +232,7 @@ const enterpriseFeatures = [
   {
     icon: <Shield className="w-8 h-8" />,
     title: 'Built-in Security and Governance',
-    description: 'From BYOK and hourly key rotation to container isolation and full audit trails, Agentic View offers end-to-end protection aligned with enterprise compliance standards like SOC 2, ISO 27001, and PCI.',
+    description: 'From BYOK and hourly key rotation to container isolation and full audit trails, AgenticView offers end-to-end protection aligned with enterprise compliance standards like SOC 2, ISO 27001, and PCI.',
     gradient: 'from-red-500 to-pink-600'
   },
   {
@@ -318,7 +250,7 @@ const enterpriseFeatures = [
   {
     icon: <BarChart3 className="w-8 h-8" />,
     title: 'Effortless Elasticity',
-    description: 'Whether you\'re scaling to new geographies or responding to surges in demand, Agentic View\'s platform handles it — automatically and instantly.',
+    description: 'Whether you\'re scaling to new geographies or responding to surges in demand, AgenticView\'s platform handles it — automatically and instantly.',
     gradient: 'from-purple-500 to-indigo-600'
   },
   {
@@ -332,21 +264,15 @@ const enterpriseFeatures = [
     title: 'Enterprise SLAs & Support',
     description: 'Backed by contractual SLAs, 24/7 global support, and dedicated success teams — because real transformation needs real partnership.',
     gradient: 'from-teal-500 to-cyan-600'
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
   }
 ];
 
 export function PlatformPage() {
-<<<<<<< HEAD
-  return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/20"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-=======
+
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrollNavVisible, setIsScrollNavVisible] = useState(false);
+  const [activeAvi, setActiveAvi] = useState(genieCategories[0]?.id || 'cx');
+  const [activeGo, setActiveGo] = useState<'search' | 'assistant' | 'deep'>('search');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -389,6 +315,10 @@ export function PlatformPage() {
     }
   };
 
+  const searchFeature = goFeatures.find(f => (f as any).id === 'search') as any;
+  const assistantFeature = goFeatures.find(f => (f as any).id === 'assistant') as any;
+  const deepFeature = goFeatures.find(f => (f as any).id === 'deep') as any;
+
   return (
     <div className="min-h-screen bg-white relative">
       {/* Fixed Scroll Navigation */}
@@ -423,29 +353,15 @@ export function PlatformPage() {
       {/* Hero Section */}
       <section id="hero" className="pt-32 pb-20 px-6 bg-gradient-to-br from-gray-50 to-purple-50">
         <div className="max-w-7xl mx-auto">
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-<<<<<<< HEAD
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6">
-              The <span style={{
-                background: 'linear-gradient(122deg, #b3fef7 26.03%, #5159f6 115.94%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
-              }}>Platform</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Built for scale, designed for innovation. Our enterprise-grade AI platform 
-              provides the foundation for intelligent automation across your entire organization.
-            </p>
-=======
+
             <p className="text-sm font-medium text-primary mb-4 tracking-wide uppercase">
-              THE AGENTIC VIEW ONE PLATFORM
+              THE AGENTICVIEW ONE PLATFORM
             </p>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-primary to-gray-900 bg-clip-text text-transparent">
               The Leading Agentic-Orchestration Platform
@@ -471,232 +387,174 @@ export function PlatformPage() {
           >
             <img 
               src={platformImage} 
-              alt="Agentic View Platform Overview"
+              alt="AgenticView Platform Overview"
               className="w-full h-auto rounded-2xl shadow-2xl"
             />
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
           </motion.div>
         </div>
       </section>
 
-<<<<<<< HEAD
-      {/* Architecture Overview */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold text-center mb-16"
-          >
-            Platform Architecture
-          </motion.h2>
 
-          <div className="space-y-4">
-            {architectureLayers.map((layer, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="relative"
-              >
-                <div className={`bg-gradient-to-r ${layer.color} p-6 rounded-2xl text-white relative overflow-hidden group hover:scale-105 transition-all duration-300`}>
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-                  <div className="relative z-10">
-                    <h3 className="text-2xl font-bold mb-2">{layer.name}</h3>
-                    <p className="text-white/90">{layer.description}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Core Features */}
-      <section className="py-20 px-6 bg-gray-900">
-        <div className="max-w-7xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold text-center mb-16"
-          >
-            Core Platform Features
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {platformFeatures.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="bg-black rounded-2xl p-8 hover:bg-gray-800 transition-all duration-300 group cursor-pointer border border-gray-800 hover:border-gray-600"
-              >
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform duration-300">
-                  {feature.icon}
-                </div>
-                
-                <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
-                <p className="text-gray-400 mb-6 leading-relaxed">{feature.description}</p>
-                
-                <div className="space-y-2">
-                  {feature.details.map((detail, detailIndex) => (
-                    <div key={detailIndex} className="flex items-center space-x-2">
-                      <Zap className="w-4 h-4 text-cyan-400" />
-                      <span className="text-sm text-gray-300">{detail}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Integrations */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold text-center mb-16"
-          >
-            Seamless Integrations
-          </motion.h2>
-
-=======
-      {/* Agentic View Genies Section */}
+      {/* One Platform Showcase: AVi's -> GO continuous sticky panel */}
       <section id="genies" className="py-20 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-<<<<<<< HEAD
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
-          >
-            {integrations.map((integration, index) => (
-              <div
-                key={index}
-                className="bg-gray-900 rounded-xl p-4 text-center hover:bg-gray-800 transition-colors border border-gray-800 hover:border-gray-600"
-              >
-                <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                  <Globe className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-sm font-medium">{integration}</span>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Performance Metrics */}
-      <section className="py-20 px-6 bg-gradient-to-r from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold text-center mb-16"
-          >
-            Platform Performance
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { metric: "99.99%", label: "Platform Uptime", icon: <Zap className="w-8 h-8" /> },
-              { metric: "<100ms", label: "API Response Time", icon: <Settings className="w-8 h-8" /> },
-              { metric: "10M+", label: "API Calls per Day", icon: <BarChart3 className="w-8 h-8" /> },
-              { metric: "250+", label: "Global Edge Locations", icon: <Globe className="w-8 h-8" /> }
-            ].map((stat, index) => (
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* Left content (scrolls) */}
+          <div className="lg:col-span-6 space-y-24">
+            {/* AVi's block */}
+            <div id="genies-left">
               <motion.div
-                key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="text-center bg-black/50 rounded-2xl p-8 backdrop-blur-sm border border-gray-800"
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true, amount: 0.3 }}
+                className="mb-8"
               >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center text-white">
-                  {stat.icon}
-                </div>
-                <div className="text-4xl md:text-5xl font-bold mb-2" style={{
-                  background: 'linear-gradient(122deg, #b3fef7 26.03%, #5159f6 115.94%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text'
-                }}>
-                  {stat.metric}
-                </div>
-                <div className="text-gray-400">{stat.label}</div>
-=======
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Agentic View Genies
-            </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Agentic View Genies are prebuilt AI agents designed to handle high-impact work within key business functions—like CPQ in Sales or onboarding in HR. They integrate with your systems, operate securely, and are customizable to your needs—so you can put AI to work, fast.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {genieCategories.map((category, index) => (
-              <motion.div
-                key={category.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-gray-300 group"
-              >
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${category.gradient} flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform duration-300`}>
-                  {category.icon}
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">{category.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{category.description}</p>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  AgenticView AVi's
+                </h2>
+                <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+                  AgenticView AVi's are prebuilt AI agents designed to handle high-impact work within key business functions—like CPQ in Sales or onboarding in HR. They integrate with your systems, operate securely, and are customizable to your needs—so you can put AI to work, fast.
+                </p>
               </motion.div>
-            ))}
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {genieCategories.map((category) => (
+                  <button
+                    key={category.id}
+                    onMouseEnter={() => setActiveAvi(category.id)}
+                    onClick={() => setActiveAvi(category.id)}
+                    className={`w-full p-5 rounded-xl text-left border transition-all duration-300 ${
+                      activeAvi === category.id
+                        ? 'border-primary ring-2 ring-primary/30 bg-purple-50/50'
+                        : 'border-gray-200 hover:border-primary/40 hover:bg-purple-50/30'
+                    }`}
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${category.gradient} text-white flex items-center justify-center shrink-0`}>
+                        {category.icon}
+                      </div>
+                      <div>
+                        <div className="text-lg font-semibold text-gray-900">{category.title}</div>
+                        <div className="text-gray-600 text-sm mt-1">{category.description}</div>
+                      </div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* GO block (anchor preserved) */}
+            <div id="go">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true, amount: 0.3 }}
+                className="mb-8"
+              >
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  AgenticView GO
+                </h2>
+                <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+                  Meet AgenticView GO — your intelligent starting point for work. Search across systems, get help from AI-powered assistants, and take real action — all in one place. Powered by enterprise agents that understand your business and get things done.
+                </p>
+              </motion.div>
+
+              <div className="grid grid-cols-1 gap-4">
+                {goFeatures.map((feature: any) => (
+                  <button
+                    key={feature.id}
+                    onMouseEnter={() => setActiveGo(feature.id)}
+                    onClick={() => setActiveGo(feature.id)}
+                    className={`w-full p-5 rounded-xl text-left border transition-all duration-300 ${
+                      activeGo === feature.id
+                        ? 'border-primary ring-2 ring-primary/30 bg-purple-50/50'
+                        : 'border-gray-200 hover:border-primary/40 hover:bg-purple-50/30'
+                    }`}
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${feature.gradient} text-white flex items-center justify-center shrink-0`}>
+                        {feature.icon}
+                      </div>
+                      <div>
+                        <div className="text-lg font-semibold text-gray-900">{feature.title}</div>
+                        <div className="text-gray-600 text-sm mt-1">{feature.description}</div>
+                      </div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
 
-      {/* Agentic View GO Section */}
-      <section id="go" className="py-20 px-6 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Agentic View GO
-            </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Meet Agentic View GO — your intelligent starting point for work. Search across systems, get help from AI-powered assistants, and take real action — all in one place. Powered by enterprise agents that understand your business and get things done.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {goFeatures.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-gray-300 group"
-              >
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${feature.gradient} flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform duration-300`}>
-                  {feature.icon}
+          {/* Right sticky neon panel (morphs between grids) */}
+          <div className="lg:col-span-6">
+            <div className="sticky top-28">
+<div className="relative rounded-3xl p-6 bg-white text-gray-900 border border-primary/30 shadow-[0_0_30px_rgba(124,58,237,0.25)]">
+                <div className="border border-dashed border-primary/40 rounded-xl px-4 py-2 inline-flex text-xs tracking-widest uppercase text-primary/80 mb-4">
+                  <AnimatePresence mode="wait">
+                    <motion.span key={activeGo ? 'go' : 'avi'} initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 6 }} transition={{ duration: 0.25 }}>
+                      {activeGo ? 'AgenticView GO' : "AgenticView AVi's"}
+                    </motion.span>
+                  </AnimatePresence>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-              </motion.div>
-            ))}
+
+                <AnimatePresence mode="wait">
+                  {/* AVi grid 3x2 */}
+                  {(!activeGo || activeGo === 'search' || activeGo === 'assistant' || activeGo === 'deep') && (
+                    <motion.div
+                      key={activeAvi ? 'avi-grid' : 'avi-grid'}
+                      initial={{ opacity: 0, scaleY: 0.95 }}
+                      animate={{ opacity: 1, scaleY: 1 }}
+                      exit={{ opacity: 0, scaleY: 0.95 }}
+                      transition={{ duration: 0.35 }}
+                      className="grid grid-cols-3 gap-4"
+                    >
+                      {genieCategories.map((cat) => (
+<div key={cat.id} className={`rounded-xl p-4 bg-gradient-to-br from-purple-50/60 to-white/90 border ${activeAvi === cat.id ? 'border-primary ring-2 ring-primary/30 shadow-[0_0_20px_rgba(124,58,237,0.25)]' : 'border-primary/10'}`}>
+                          <div className={`w-10 h-10 rounded-lg mb-3 bg-gradient-to-r ${cat.gradient} flex items-center justify-center text-white`}>
+                            {cat.icon}
+                          </div>
+                          <div className="text-sm">{cat.title}</div>
+                        </div>
+                      ))}
+                    </motion.div>
+                  )}
+
+                  {/* GO layout: big + two small */}
+                  {activeGo && (
+                    <motion.div
+                      key={`go-grid-${activeGo}`}
+                      initial={{ opacity: 0, scaleY: 0.9 }}
+                      animate={{ opacity: 1, scaleY: 1 }}
+                      exit={{ opacity: 0, scaleY: 0.9 }}
+                      transition={{ duration: 0.35 }}
+                      className="grid grid-cols-2 gap-4"
+                    >
+<div className={`col-span-2 rounded-xl p-6 bg-gradient-to-br from-purple-50/60 to-white/90 border ${activeGo === 'search' ? 'border-primary ring-2 ring-primary/30 shadow-[0_0_20px_rgba(124,58,237,0.25)]' : 'border-primary/10'}`}>
+                        <div className={`w-12 h-12 rounded-lg mb-3 bg-gradient-to-r ${searchFeature?.gradient} flex items-center justify-center text-white`}>
+                          {searchFeature?.icon}
+                        </div>
+                        <div className="text-lg font-semibold">{searchFeature?.title}</div>
+<div className="text-sm text-gray-600 mt-1">{searchFeature?.description}</div>
+                      </div>
+<div className={`rounded-xl p-5 bg-gradient-to-br from-purple-50/60 to-white/90 border ${activeGo === 'assistant' ? 'border-primary ring-2 ring-primary/30 shadow-[0_0_20px_rgba(124,58,237,0.25)]' : 'border-primary/10'}`}>
+                        <div className={`w-10 h-10 rounded-lg mb-2 bg-gradient-to-r ${assistantFeature?.gradient} flex items-center justify-center text-white`}>
+                          {assistantFeature?.icon}
+                        </div>
+                        <div className="text-sm font-medium">{assistantFeature?.title}</div>
+                      </div>
+<div className={`rounded-xl p-5 bg-gradient-to-br from-purple-50/60 to-white/90 border ${activeGo === 'deep' ? 'border-primary ring-2 ring-primary/30 shadow-[0_0_20px_rgba(124,58,237,0.25)]' : 'border-primary/10'}`}>
+                        <div className={`w-10 h-10 rounded-lg mb-2 bg-gradient-to-r ${deepFeature?.gradient} flex items-center justify-center text-white`}>
+                          {deepFeature?.icon}
+                        </div>
+                        <div className="text-sm font-medium">{deepFeature?.title}</div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -711,7 +569,7 @@ export function PlatformPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Agentic View Agentic
+              AgenticView Agentic
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Design, test, and deploy enterprise-grade agents in a low-code studio grounded in your systems, logic, and business processes.
@@ -748,7 +606,7 @@ export function PlatformPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Agentic View Orchestrate
+              AgenticView Orchestrate
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Orchestrate data, apps, processes, experiences, and agents in one place. Built on a leading iPaaS with API management, integration, B2B/EDI, and document processing, it unifies bots, logic, and AI to drive execution across your entire stack.
@@ -828,7 +686,7 @@ export function PlatformPage() {
               The trusted foundation for mission-critical Agentic-Orchestration
             </p>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Agentic View ONE isn't just powerful — it's built for the demands of modern enterprises. Behind every agent, automation, and workflow is a platform engineered for scale, resilience, and security.
+              AgenticView ONE isn't just powerful — it's built for the demands of modern enterprises. Behind every agent, automation, and workflow is a platform engineered for scale, resilience, and security.
             </p>
           </motion.div>
 
@@ -846,7 +704,6 @@ export function PlatformPage() {
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">{feature.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{feature.description}</p>
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
               </motion.div>
             ))}
           </div>
@@ -854,41 +711,15 @@ export function PlatformPage() {
       </section>
 
       {/* CTA Section */}
-<<<<<<< HEAD
-      <section className="py-20 px-6">
-=======
+
       <section className="py-20 px-6 bg-gradient-to-br from-primary to-secondary">
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-<<<<<<< HEAD
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to Build on Our Platform?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Experience the power of enterprise-grade AI infrastructure. 
-              Start building intelligent applications today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                style={{
-                  background: 'linear-gradient(135deg, #67eadd 0%, #4dd5c7 50%, #33c1b3 100%)'
-                }}
-                className="px-8 py-4 rounded-xl text-black font-semibold hover:scale-105 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Get API Access
-              </motion.button>
-              <motion.button
-                className="px-8 py-4 rounded-xl border border-gray-600 hover:border-gray-400 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-=======
+
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Ready to Transform Your Business?
             </h2>
@@ -908,7 +739,6 @@ export function PlatformPage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 border-2 border-white/30 text-white rounded-xl font-semibold text-lg hover:bg-white/10 transition-all duration-300"
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
               >
                 View Documentation
               </motion.button>

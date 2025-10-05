@@ -1,11 +1,7 @@
 import { Facebook, Twitter, Linkedin, Youtube, Instagram } from 'lucide-react';
-<<<<<<< HEAD
-import { LanguageSelector } from './LanguageSelector';
-=======
+
 import { motion } from 'framer-motion';
-import { LanguageSelector } from './LanguageSelector';
 import { logoIconImg, logoTextImg } from '../assets';
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
 
 interface FooterProps {
   currentLanguage?: string;
@@ -15,25 +11,7 @@ interface FooterProps {
   enableScrollAnimations?: boolean;
 }
 
-<<<<<<< HEAD
-export function Footer({ 
-  currentLanguage = 'English', 
-  onLanguageChange = () => {}, 
-  onLogoClick = () => window.scrollTo({ top: 0, behavior: 'smooth' }), 
-  onNavigationClick = (page: string) => {
-    console.log(`Navigate to ${page}`);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  },
-  enableScrollAnimations = false
-}: FooterProps) {
-  return (
-    <footer className="bg-white text-gray-900 py-16 px-6 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-          {/* Company Info */}
-          <div className="lg:col-span-1">
-=======
+
 export function Footer({
   currentLanguage = 'English',
   onLanguageChange = () => {},
@@ -83,23 +61,11 @@ export function Footer({
             {/* subtle blurred shadow behind column (non-intrusive) */}
             <div className="absolute -inset-3 -z-10 rounded-lg blur-3xl opacity-10 bg-gradient-to-br from-gray-200 to-transparent pointer-events-none" />
 
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
             <button 
               onClick={onLogoClick}
-              className="flex items-center space-x-3 mb-6 hover:opacity-80 transition-opacity"
+className="flex items-center space-x-3 mb-6 hover:opacity-80 transition-opacity cursor-pointer"
             >
-<<<<<<< HEAD
-              <div 
-                className="w-10 h-10 rounded-lg flex items-center justify-center text-xl font-bold"
-                style={{ 
-                  background: 'linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%)',
-                  color: '#fff'
-                }}
-              >
-                A
-              </div>
-              <span className="text-xl font-medium text-gray-900">Agentic View</span>
-=======
+
               <img 
                 src={logoIconImg}
                 alt="AgenticView Logo"
@@ -110,161 +76,128 @@ export function Footer({
                 alt="AgenticView"
                 className="h-6 w-auto flex-shrink-0"
               />
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
             </button>
             <p className="text-gray-600 mb-6 text-sm">
               The next generation of AI agents built for the enterprise.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-500 hover:text-gray-900 transition-colors">
+<a href="#" className="text-gray-500 hover:text-gray-900 transition-colors cursor-pointer">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-500 hover:text-gray-900 transition-colors">
+<a href="#" className="text-gray-500 hover:text-gray-900 transition-colors cursor-pointer">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-500 hover:text-gray-900 transition-colors">
+<a href="#" className="text-gray-500 hover:text-gray-900 transition-colors cursor-pointer">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-500 hover:text-gray-900 transition-colors">
+<a href="#" className="text-gray-500 hover:text-gray-900 transition-colors cursor-pointer">
                 <Youtube className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-500 hover:text-gray-900 transition-colors">
+<a href="#" className="text-gray-500 hover:text-gray-900 transition-colors cursor-pointer">
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
-<<<<<<< HEAD
-          </div>
 
-          {/* Company */}
-          <div>
-=======
           </motion.div>
 
           {/* Company */}
           <motion.div variants={columnVariants} className="relative">
             <div className="absolute -inset-3 -z-10 rounded-lg blur-3xl opacity-8 bg-gradient-to-br from-gray-200 to-transparent pointer-events-none" />
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
             <h3 className="text-lg mb-4 text-gray-900">Company</h3>
             <ul className="space-y-3 text-sm">
-              <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">The Agentic View Platform</button></li>
-              <li><button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors">Why Agentic View</button></li>
-              <li><button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors">About us</button></li>
-              <li><button onClick={() => onNavigationClick('pricing')} className="text-gray-600 hover:text-gray-900 transition-colors">Pricing</button></li>
-              <li><button onClick={() => onNavigationClick('customers')} className="text-gray-600 hover:text-gray-900 transition-colors">Customers</button></li>
-              <li><button onClick={() => onNavigationClick('partners')} className="text-gray-600 hover:text-gray-900 transition-colors">Partners</button></li>
-              <li><button onClick={() => onNavigationClick('careers')} className="text-gray-600 hover:text-gray-900 transition-colors">Careers</button></li>
-              <li><button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors">Agentic View Cares</button></li>
-              <li><button onClick={() => onNavigationClick('press')} className="text-gray-600 hover:text-gray-900 transition-colors">Press</button></li>
+<li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">The AgenticView Platform</button></li>
+<li><button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Why AgenticView</button></li>
+              <li><button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">About us</button></li>
+              <li><button onClick={() => onNavigationClick('pricing')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Pricing</button></li>
+              <li><button onClick={() => onNavigationClick('customers')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Customers</button></li>
+              <li><button onClick={() => onNavigationClick('partners')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Partners</button></li>
+              <li><button onClick={() => onNavigationClick('careers')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Careers</button></li>
+<li><button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">AgenticView Cares</button></li>
+              <li><button onClick={() => onNavigationClick('press')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Press</button></li>
             </ul>
-<<<<<<< HEAD
-          </div>
 
-          {/* Product */}
-          <div>
-=======
           </motion.div>
 
           {/* Product */}
           <motion.div variants={columnVariants} className="relative">
             <div className="absolute -inset-3 -z-10 rounded-lg blur-3xl opacity-8 bg-gradient-to-br from-gray-200 to-transparent pointer-events-none" />
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
             <h3 className="text-lg mb-4 text-gray-900">Product</h3>
             <ul className="space-y-3 text-sm">
-              <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">Enterprise iPaaS</button></li>
-              <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">Embedded integrations</button></li>
-              <li><button onClick={() => onNavigationClick('agents')} className="text-gray-600 hover:text-gray-900 transition-colors">Agentic</button></li>
-              <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">API Management</button></li>
-              <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">Data Orchestration</button></li>
-              <li><button onClick={() => onNavigationClick('agents')} className="text-gray-600 hover:text-gray-900 transition-colors">Workflow Bots</button></li>
-              <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">Low Code Apps</button></li>
-              <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">B2B/EDI</button></li>
-              <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">Insights</button></li>
-              <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">Data Hub / MDM</button></li>
-              <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">BPM Services</button></li>
+<li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Enterprise iPaaS</button></li>
+<li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Embedded integrations</button></li>
+<li><button onClick={() => onNavigationClick('agents')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Agentic</button></li>
+<li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">API Management</button></li>
+<li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Data Orchestration</button></li>
+<li><button onClick={() => onNavigationClick('agents')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Workflow Bots</button></li>
+<li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Low Code Apps</button></li>
+<li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">B2B/EDI</button></li>
+<li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Insights</button></li>
+<li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Data Hub / MDM</button></li>
+<li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">BPM Services</button></li>
             </ul>
-<<<<<<< HEAD
-          </div>
 
-          {/* Resources & Learn */}
-          <div>
-=======
           </motion.div>
 
           {/* Resources & Learn */}
           <motion.div variants={columnVariants} className="relative">
             <div className="absolute -inset-3 -z-10 rounded-lg blur-3xl opacity-8 bg-gradient-to-br from-gray-200 to-transparent pointer-events-none" />
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
             <h3 className="text-lg mb-4 text-gray-900">Resources</h3>
             <ul className="space-y-3 text-sm">
-              <li><button onClick={() => onNavigationClick('demo')} className="text-gray-600 hover:text-gray-900 transition-colors">Demo</button></li>
-              <li><button onClick={() => onNavigationClick('demo')} className="text-gray-600 hover:text-gray-900 transition-colors">Agentic View Conference</button></li>
-              <li><button onClick={() => onNavigationClick('documentation')} className="text-gray-600 hover:text-gray-900 transition-colors">Documentation</button></li>
-              <li><button onClick={() => onNavigationClick('training')} className="text-gray-600 hover:text-gray-900 transition-colors">Training</button></li>
-              <li><button onClick={() => onNavigationClick('certification')} className="text-gray-600 hover:text-gray-900 transition-colors">Certification</button></li>
-              <li><button onClick={() => onNavigationClick('support')} className="text-gray-600 hover:text-gray-900 transition-colors">Customer Success</button></li>
-              <li><button onClick={() => onNavigationClick('blog')} className="text-gray-600 hover:text-gray-900 transition-colors">Company Blog</button></li>
-              <li><button onClick={() => onNavigationClick('blog')} className="text-gray-600 hover:text-gray-900 transition-colors">Product Blog</button></li>
-              <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">Integration Library</button></li>
+<li><button onClick={() => onNavigationClick('demo')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Demo</button></li>
+<li><button onClick={() => onNavigationClick('demo')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">AgenticView Conference</button></li>
+<li><button onClick={() => onNavigationClick('documentation')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Documentation</button></li>
+<li><button onClick={() => onNavigationClick('training')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Training</button></li>
+<li><button onClick={() => onNavigationClick('certification')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Certification</button></li>
+<li><button onClick={() => onNavigationClick('support')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Customer Success</button></li>
+<li><button onClick={() => onNavigationClick('blog')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Company Blog</button></li>
+<li><button onClick={() => onNavigationClick('blog')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Product Blog</button></li>
+<li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Integration Library</button></li>
             </ul>
 
             <h3 className="text-lg mb-4 mt-8 text-gray-900">Learn</h3>
             <ul className="space-y-3 text-sm">
-              <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">What is an iPaaS?</button></li>
-              <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">Why Embed?</button></li>
-              <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">What is API Management?</button></li>
-              <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">Software Integration Guide</button></li>
-              <li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors">What is Process Automation?</button></li>
+<li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">What is an iPaaS?</button></li>
+<li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Why Embed?</button></li>
+<li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">What is API Management?</button></li>
+<li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Software Integration Guide</button></li>
+<li><button onClick={() => onNavigationClick('platform')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">What is Process Automation?</button></li>
             </ul>
-<<<<<<< HEAD
-          </div>
 
-          {/* Contact */}
-          <div>
-=======
           </motion.div>
 
           {/* Contact */}
           <motion.div variants={columnVariants} className="relative">
             <div className="absolute -inset-3 -z-10 rounded-lg blur-3xl opacity-8 bg-gradient-to-br from-gray-200 to-transparent pointer-events-none" />
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
             <h3 className="text-lg mb-4 text-gray-900">Contact</h3>
             <ul className="space-y-3 text-sm">
-              <li><button onClick={() => onNavigationClick('contact')} className="text-gray-600 hover:text-gray-900 transition-colors">Contact Sales</button></li>
-              <li><button onClick={() => onNavigationClick('support')} className="text-gray-600 hover:text-gray-900 transition-colors">Contact Support</button></li>
-              <li><button onClick={() => onNavigationClick('contact')} className="text-gray-600 hover:text-gray-900 transition-colors">Office Hours</button></li>
+<li><button onClick={() => onNavigationClick('contact')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Contact Sales</button></li>
+<li><button onClick={() => onNavigationClick('support')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Contact Support</button></li>
+<li><button onClick={() => onNavigationClick('contact')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Office Hours</button></li>
             </ul>
 
             <h3 className="text-lg mb-4 mt-8 text-gray-900">User Reviews</h3>
             <ul className="space-y-3 text-sm">
-              <li><button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors">Gartner Peer Insights™</button></li>
-              <li><button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors">G2</button></li>
-              <li><button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors">TrustRadius</button></li>
+<li><button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Gartner Peer Insights™</button></li>
+<li><button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">G2</button></li>
+<li><button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">TrustRadius</button></li>
             </ul>
-<<<<<<< HEAD
-          </div>
-        </div>
-=======
+
           </motion.div>
         </motion.div>
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
 
         {/* Bottom Footer */}
         <div className="border-t border-gray-300 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
             <div className="flex flex-wrap items-center space-x-6">
-              <button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors text-sm">Privacy Policy</button>
-              <button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors text-sm">Terms of Service</button>
-              <button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors text-sm">Cookie Policy</button>
-              <button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors text-sm">Security</button>
+              <button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors text-sm cursor-pointer">Privacy Policy</button>
+              <button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors text-sm cursor-pointer">Terms of Service</button>
+              <button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors text-sm cursor-pointer">Cookie Policy</button>
+              <button onClick={() => onNavigationClick('about')} className="text-gray-600 hover:text-gray-900 transition-colors text-sm cursor-pointer">Security</button>
             </div>
             
             <div className="flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6">
-              <LanguageSelector 
-                currentLanguage={currentLanguage}
-                onLanguageChange={onLanguageChange}
-              />
               <p className="text-gray-600 text-sm">
-                © 2025 Agentic View. All rights reserved.
+                © 2025 AgenticView. All rights reserved.
               </p>
             </div>
           </div>
@@ -277,11 +210,8 @@ export function Footer({
                 you agree to our use of cookies and our Privacy Policy.
               </p>
               <p>
-<<<<<<< HEAD
-                Agentic View is committed to protecting your privacy and ensuring the security of your personal information. 
-=======
+
                 AgenticView is committed to protecting your privacy and ensuring the security of your personal information. 
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
                 We comply with applicable data protection regulations including GDPR and CCPA.
               </p>
               <p>
@@ -289,7 +219,7 @@ export function Footer({
                 Third-party logos and product names are for identification purposes only and do not imply endorsement.
               </p>
               <p>
-                The information contained herein is subject to change without notice. Agentic View shall not be liable for technical or editorial 
+                The information contained herein is subject to change without notice. AgenticView shall not be liable for technical or editorial 
                 errors or omissions contained herein.
               </p>
             </div>

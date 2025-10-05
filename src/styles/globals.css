@@ -1,17 +1,13 @@
-<<<<<<< HEAD
-=======
+
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
 @custom-variant dark (&:is(.dark *));
 
 :root {
   --font-size: 16px;
   --font-family: "Mr Eaves Xl Modot", Helvetica, Arial, sans-serif;
-<<<<<<< HEAD
-=======
+
   --font-family-headings: "Comfortaa", "Mr Eaves Xl Modot", Helvetica, Arial, sans-serif;
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
   --background: #ffffff;
   --foreground: oklch(0.145 0 0);
   --card: #ffffff;
@@ -188,27 +184,19 @@
 
   /* Ensure header stays above all content */
   header {
-<<<<<<< HEAD
-    z-index: 9999 !important;
-=======
+
     z-index: 10000 !important;
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
   }
 
   /* Prevent content from going behind fixed header */
   body {
-<<<<<<< HEAD
-    padding-top: 0;
-=======
+
     padding-top: 80px;
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
   }
 
   /* Main content should start below header */
   main, .main-content {
-<<<<<<< HEAD
-    margin-top: 80px;
-=======
+
     margin-top: 0;
   }
 
@@ -221,7 +209,6 @@
   section:first-of-type,
   div:first-of-type {
     margin-top: 0;
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
   }
 }
 
@@ -231,20 +218,16 @@
 @layer base {
   :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
     h1 {
-<<<<<<< HEAD
-=======
+
       font-family: var(--font-family-headings);
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
       font-size: var(--text-2xl);
       font-weight: var(--font-weight-medium);
       line-height: 1.5;
     }
 
     h2 {
-<<<<<<< HEAD
-=======
+
       font-family: var(--font-family-headings);
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
       font-size: var(--text-xl);
       font-weight: var(--font-weight-medium);
       line-height: 1.5;
@@ -453,8 +436,7 @@ html {
   scrollbar-color: #8b5cf6 rgba(139, 92, 246, 0.1);
 }
 
-<<<<<<< HEAD
-=======
+
 /* Large text and headings use Comfortaa font */
 .text-3xl, .text-4xl, .text-5xl, .text-6xl,
 h1.text-3xl, h1.text-4xl, h1.text-5xl, h1.text-6xl,
@@ -470,7 +452,6 @@ h2.text-3xl, h2.text-4xl, h2.text-5xl, h2.text-6xl,
   line-height: 1.2;
 }
 
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
 /* Enhanced footer animations */
 .footer-animate-in {
   animation: footerSlideUp 0.8s ease-out forwards;
@@ -487,8 +468,7 @@ h2.text-3xl, h2.text-4xl, h2.text-5xl, h2.text-6xl,
   }
 }
 
-<<<<<<< HEAD
-=======
+
 /* Network and particle effects */
 .network-glow {
   filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.3));
@@ -503,7 +483,6 @@ h2.text-3xl, h2.text-4xl, h2.text-5xl, h2.text-6xl,
   background: radial-gradient(circle, var(--tw-gradient-stops));
 }
 
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
 /* Scroll to top button styles */
 .scroll-to-top-btn {
   position: fixed;
@@ -540,8 +519,7 @@ h2.text-3xl, h2.text-4xl, h2.text-5xl, h2.text-6xl,
   visibility: visible;
   transform: translateY(0);
 }
-<<<<<<< HEAD
-=======
+
 
 /* Mobile Menu Animations */
 @keyframes slideInRight {
@@ -893,6 +871,23 @@ h2.text-3xl, h2.text-4xl, h2.text-5xl, h2.text-6xl,
   animation: shimmer 1.5s ease-in-out infinite;
 }
 
+/* Mobile placeholder size utility */
+.placeholder-mobile-0_9rem::placeholder {
+  font-size: 0.9rem;
+}
+@media (min-width: 640px) {
+  .placeholder-mobile-0_9rem::placeholder {
+    font-size: 1rem;
+  }
+}
+
+/* Adjust headspace for ContentSections heading on sm+ */
+@media (width >= 40rem) {
+  .sm\:mb-12 {
+    margin-top: 57px;
+  }
+}
+
 /* Fast content transitions */
 .page-transition-enter {
   opacity: 0;
@@ -915,4 +910,3 @@ h2.text-3xl, h2.text-4xl, h2.text-5xl, h2.text-6xl,
   transform: translateY(-20px);
   transition: all 200ms ease-in;
 }
->>>>>>> e35854f (Whole new code so many changes which are not pushed)

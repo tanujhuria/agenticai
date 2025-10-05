@@ -1,8 +1,6 @@
 import { ArrowUpRight } from 'lucide-react';
-<<<<<<< HEAD
-=======
+
 import { NetworkBackground } from './NetworkBackground';
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
 
 interface HeroBannerProps {
   onTrialClick: () => void;
@@ -11,17 +9,7 @@ interface HeroBannerProps {
 
 export function HeroBanner({ onTrialClick, onTalkToSalesClick }: HeroBannerProps) {
   return (
-<<<<<<< HEAD
-    <section className="bg-white text-gray-900 pt-24 sm:pt-28 pb-16 sm:pb-20 px-6">
-      <div className="max-w-4xl mx-auto text-center">
-        {/* Main Heading */}
-        <h1 
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
-          style={{ 
-            fontFamily: 'Mr Eaves Xl Modot, Helvetica, Arial, sans-serif'
-          }}
-        >
-=======
+
     <section className="relative bg-gradient-to-br from-white to-purple-50/30 text-gray-900 pt-8 sm:pt-12 pb-12 sm:pb-16 px-6 overflow-hidden">
       {/* Animated Network Background */}
       <NetworkBackground 
@@ -40,22 +28,13 @@ export function HeroBanner({ onTrialClick, onTalkToSalesClick }: HeroBannerProps
       
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Main Heading */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-5 leading-tight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
-          Introducing AVi's: The next generation of agents built for the enterprise
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-5 leading-tight text-gray-900">
+          <span className="gradient-text-animate">AVi: Agentic copilots built for business.</span>
         </h1>
 
         {/* Subheading */}
-<<<<<<< HEAD
-        <p 
-          className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 sm:mb-12 max-w-3xl mx-auto"
-          style={{ 
-            fontFamily: 'Mr Eaves Xl Modot, Helvetica, Arial, sans-serif'
-          }}
-        >
-=======
+
         <p className="text-lg sm:text-xl md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto">
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
           AI agents orchestrated with your data, apps, and workflows. Built on the #1 iPaaS.
         </p>
 

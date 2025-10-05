@@ -1,10 +1,8 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Workflow, Users } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-<<<<<<< HEAD
-=======
+
 import { FloatingShapes } from './FloatingShapes';
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
 
 interface InteractiveSectionsProps {
   onTrialClick?: () => void;
@@ -12,13 +10,7 @@ interface InteractiveSectionsProps {
 
 export function InteractiveSections({ onTrialClick }: InteractiveSectionsProps) {
   return (
-<<<<<<< HEAD
-    <section className="bg-white py-16 sm:py-20 px-6">
-      <div className="max-w-7xl mx-auto">
-        {/* First Section - Image Left, Text Right */}
-        <motion.div 
-          className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20"
-=======
+
     <section className="relative bg-white py-12 sm:py-16 px-6 overflow-hidden">
       {/* Floating Shapes Background */}
       <FloatingShapes />
@@ -27,7 +19,6 @@ export function InteractiveSections({ onTrialClick }: InteractiveSectionsProps) 
         {/* First Section - Image Left, Text Right */}
         <motion.div 
           className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-16"
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

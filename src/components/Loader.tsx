@@ -1,8 +1,5 @@
 import { motion } from 'motion/react';
-<<<<<<< HEAD
-=======
-import logoIconImg from 'figma:asset/bd28315832c77c36328805e69c07a718c6c222cc.png';
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
+import { logoIconImg } from '../assets';
 
 export function Loader() {
   return (
@@ -18,38 +15,16 @@ export function Loader() {
           initial={{ scale: 0.8 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-<<<<<<< HEAD
-          className="flex items-center space-x-3"
-        >
-          <div 
-            className="w-12 h-12 rounded-lg flex items-center justify-center text-2xl font-bold"
-            style={{ 
-              background: 'linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%)',
-              color: '#fff'
-            }}
-          >
-            A
-          </div>
-          <span className="text-2xl font-medium text-gray-900">Agentic View</span>
-=======
           className="flex items-center space-x-4"
         >
           <motion.img 
             src={logoIconImg}
             alt="AgenticView Bird Logo"
             className="w-14 h-14"
-            animate={{ 
-              y: [0, -5, 0],
-              rotate: [0, 2, -2, 0]
-            }}
-            transition={{ 
-              duration: 2, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
-            }}
+            animate={{ y: [0, -5, 0], rotate: [0, 2, -2, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           />
           <span className="text-3xl font-medium text-gray-900 font-family-headings">AgenticView</span>
->>>>>>> e35854f (Whole new code so many changes which are not pushed)
         </motion.div>
 
         {/* Loading Animation */}
