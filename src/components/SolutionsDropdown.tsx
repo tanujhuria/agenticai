@@ -111,7 +111,13 @@ export function SolutionsDropdown({ onNavigationClick, isWhiteBackground, onMenu
                     <button
                       key={index}
                       onClick={() => {
-                        onNavigationClick(item.page);
+                        // App Integrations: route to Integration page with search and scroll to connectors
+                        if (item.name === 'View all') {
+                          window.location.hash = '#/integration?section=connectors';
+                        } else {
+                          const q = encodeURIComponent(item.name);
+                          window.location.hash = `#/integration?q=${q}&section=connectors`;
+                        }
                         handleMenuToggle(false);
                       }}
                       className={`flex items-start space-x-3 w-full text-left py-2 px-3 rounded-lg hover:bg-purple-50 hover:text-primary transition-all duration-200 group ${
@@ -176,7 +182,17 @@ export function SolutionsDropdown({ onNavigationClick, isWhiteBackground, onMenu
                     <button
                       key={index}
                       onClick={() => {
-                        onNavigationClick(item.page);
+                        // Map By Function to Agents pages
+                        const map: Record<string, string> = {
+                          'IT': 'it',
+                          'Finance': 'pricing',
+                          'Support': 'support',
+                          'HR': 'hr',
+                          'Marketing': 'marketing',
+                          'Sales': 'sales',
+                        };
+                        const target = map[item.name] || item.page;
+                        onNavigationClick(target);
                         handleMenuToggle(false);
                       }}
                       className="flex items-start space-x-3 w-full text-left py-2 px-3 rounded-lg hover:bg-purple-50 hover:text-primary transition-all duration-200 group"

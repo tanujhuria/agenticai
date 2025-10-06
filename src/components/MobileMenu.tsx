@@ -43,7 +43,7 @@ const menuItems: MenuItem[] = [
     items: [
       { name: 'AgenticView One Platform', page: 'platform' },
       { name: 'The AgenticView ONE Advantage', page: 'platform-advantage' },
-      { name: 'Why AgenticView', page: 'why-avis' },
+      { name: 'Why AgenticView', page: 'about' },
 { name: 'Integration', page: 'integration' },
       { name: 'Enterprise-Grade Security', page: 'security' },
       { name: 'Pricing', page: 'pricing' },

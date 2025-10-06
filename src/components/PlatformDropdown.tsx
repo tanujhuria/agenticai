@@ -23,7 +23,7 @@ export function PlatformDropdown({ onNavigationClick, isWhiteBackground, onMenuS
       items: [
         { name: 'AgenticView One Platform', page: 'platform', icon: Layers },
         { name: "The AgenticView ONE Advantage", page: 'platform-advantage', icon: Settings },
-        { name: "Why AgenticView", page: 'why-avis', icon: ArrowUpRight },
+        { name: "Why AgenticView", page: 'about', icon: ArrowUpRight },
 { name: 'Integration', page: 'integration', icon: Globe },
         { name: 'Enterprise-Grade Security', page: 'security', icon: Settings },
         { name: 'Pricing', page: 'pricing', icon: BarChart3 }

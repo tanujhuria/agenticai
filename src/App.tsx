@@ -51,6 +51,7 @@ export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
+  const [hasHydratedFromHash, setHasHydratedFromHash] = useState(false);
   const cache = CacheManager.getInstance();
 
   useEffect(() => {
@@ -102,28 +103,49 @@ export default function App() {
   const handleDemoClick = () => setCurrentPage("trial");
   const handleTalkToSalesClick = () => setCurrentPage("contact");
   const handleLogoClick = () => setCurrentPage("home");
-  const handleNavigationClick = (page: string) => { if (page !== currentPage) setCurrentPage(page); };
+  const handleNavigationClick = (page: string) => { 
+    if (page !== currentPage) setCurrentPage(page);
+    // Always scroll to top on explicit navigation (footer/header/menu)
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // set page from URL hash on load and when hash changes
   useEffect(() => {
     const parseHash = () => {
       const hash = window.location.hash.replace(/^#\/?/, '').trim();
       const route = hash || 'home';
+      const [routeName] = route.split('?');
       // map legacy routes if needed
-      const normalized = route === 'connectors' ? 'integration' : route;
+      const normalized = routeName === 'connectors' ? 'integration' : routeName;
       setCurrentPage(normalized);
     };
+    // Parse initial hash before we ever write to it
     parseHash();
-    const onHashChange = () => parseHash();
+    setHasHydratedFromHash(true);
+    const onHashChange = () => {
+      parseHash();
+      setHasHydratedFromHash(true);
+    };
     window.addEventListener('hashchange', onHashChange);
     return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
 
   // keep URL updated when currentPage changes
   useEffect(() => {
+    if (!hasHydratedFromHash) return;
+    const hash = window.location.hash.replace(/^#\/?/, '').trim();
+    const [routeName] = (hash || 'home').split('?');
     const desired = `#/${currentPage}`;
-    if (window.location.hash !== desired) {
+    // Only overwrite hash if route name differs; preserve existing query params for same page
+    if (routeName !== currentPage) {
       window.location.hash = desired;
+    }
+  }, [currentPage, hasHydratedFromHash]);
+
+  // Ensure Contact page always opens scrolled to top
+  useEffect(() => {
+    if (currentPage === 'contact') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [currentPage]);
   const handleMenuStateChange = (isOpen: boolean) => setIsMenuOpen(isOpen);

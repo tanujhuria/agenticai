@@ -16,7 +16,7 @@ interface ContentSectionsProps { onTrialClick?: () => void; }
 export function ContentSections({ onTrialClick = () => {} }: ContentSectionsProps) {
   return (
     <section className="relative bg-gradient-to-b from-gray-50 to-white py-12 sm:py-16 px-6 overflow-hidden">
-      <NetworkBackground className="absolute inset-0" nodeCount={25} maxDistance={100} nodeColor="#8b5cf6" lineColor="#a855f7" nodeSize={1} animationSpeed={0.2} opacity={0.2} />
+     {/* <NetworkBackground className="absolute inset-0" nodeCount={25} maxDistance={100} nodeColor="#8b5cf6" lineColor="#a855f7" nodeSize={1} animationSpeed={0.2} opacity={0.2} /> */}
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-8 sm:mb-12">
           <div className="flex items-center justify-center mb-8">

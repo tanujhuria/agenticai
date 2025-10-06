@@ -49,8 +49,7 @@ export function AboutPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl mb-8 leading-tight">
-              <span className="text-gray-900">About</span>
-              <span className="block gradient-text-animate">Agentic View</span>
+              <span className="bg-gradient-to-r from-gray-900 via-primary to-secondary bg-clip-text text-transparent">Why AgenticView</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               We're revolutionizing how businesses operate with intelligent AI agents that transform workflows and accelerate growth.

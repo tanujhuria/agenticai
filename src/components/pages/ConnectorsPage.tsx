@@ -339,6 +339,27 @@ export function ConnectorsPage({ hideHero = false }: { hideHero?: boolean }) {
     setCurrentPage(1);
   }, [activeCategory, searchTerm]);
 
+  // Read search and section from hash (e.g., #/integration?q=Slack&section=connectors)
+  useEffect(() => {
+    const applyFromHash = () => {
+      const hash = window.location.hash.replace(/^#\/?/, '');
+      const [, queryString] = hash.split('?');
+      if (!queryString) return;
+      const params = new URLSearchParams(queryString);
+      const q = params.get('q') || params.get('search');
+      const section = params.get('section');
+      if (q !== null) setSearchTerm(q);
+      if (section === 'connectors') {
+        setTimeout(() => {
+          document.getElementById('connectors')?.scrollIntoView({ behavior: 'smooth' });
+        }, 50);
+      }
+    };
+    applyFromHash();
+    window.addEventListener('hashchange', applyFromHash);
+    return () => window.removeEventListener('hashchange', applyFromHash);
+  }, []);
+
   const totalItems = searchFilteredConnectors.length;
   const totalPages = Math.max(1, Math.ceil(totalItems / itemsPerPage));
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -400,7 +421,7 @@ export function ConnectorsPage({ hideHero = false }: { hideHero?: boolean }) {
       )}
 
       {/* Interactive Connectors Section */}
-      <section className={`relative ${hideHero ? 'pt-10 pb-16' : 'py-20'} px-4 sm:px-6`}>
+      <section id="connectors" className={`relative ${hideHero ? 'pt-10 pb-16' : 'py-20'} px-4 sm:px-6`}>
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -467,7 +488,7 @@ export function ConnectorsPage({ hideHero = false }: { hideHero?: boolean }) {
 
               className="flex-1 min-w-0"
             >
-              <div className="mb-4 grid grid-cols-1 md:grid-cols-[auto,1fr] lg:grid-cols-2 items-end gap-4">
+              <div className="w-full max-w-none -ml-4 mb-4 grid grid-cols-1 md:grid-cols-[auto,1fr] lg:grid-cols-3 items-end gap-4">
                 <div className="flex items-baseline gap-3">
                   <h3 className="text-xl lg:text-2xl font-bold text-gray-900">
                     {activeCategory === 'All' ? 'All' : activeCategory}
@@ -691,6 +712,7 @@ export function ConnectorsPage({ hideHero = false }: { hideHero?: boolean }) {
               variant="outline"
               size="lg"
               className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 text-lg"
+              onClick={() => { window.location.hash = '#/contact'; }}
             >
               Discover More Templates
               <ArrowUpRight className="w-5 h-5 ml-2" />
@@ -719,6 +741,7 @@ export function ConnectorsPage({ hideHero = false }: { hideHero?: boolean }) {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                onClick={() => { window.location.hash = '#/trial'; }}
               >
                 <Calendar className="w-5 h-5 mr-2" />
                 Schedule a demo
@@ -728,8 +751,9 @@ export function ConnectorsPage({ hideHero = false }: { hideHero?: boolean }) {
                 variant="outline"
                 size="lg"
                 className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 text-lg"
+                onClick={() => { window.location.hash = '#/contact'; }}
               >
-                Start Free Trial
+                Talk to Sales
                 <ArrowUpRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
