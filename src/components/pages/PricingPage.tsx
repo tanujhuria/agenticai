@@ -348,10 +348,10 @@ export function PricingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 font-family-headings">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 font-family-headings bg-gradient-to-r from-gray-100 via-primary to-secondary bg-clip-text text-transparent">
               Build as much as you want.
             </h1>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8 font-family-headings">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8 font-family-headings bg-gradient-to-r from-gray-100 via-primary to-secondary bg-clip-text text-transparent">
               Pay only when your workflows run.
             </h2>
             
@@ -397,9 +397,6 @@ export function PricingPage() {
               </div>
             )}
 
-            <p className="text-gray-300 text-sm">
-              {isCloud ? '*14 days free trial. No credit card required.' : '*Community edition available for free. Commercial license required for business use.'}
-            </p>
           </motion.div>
         </div>
       </section>

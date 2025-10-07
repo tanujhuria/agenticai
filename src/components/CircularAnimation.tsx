@@ -184,10 +184,10 @@ export function CircularAnimation() {
             {/* Center Text */}
             <div className="absolute inset-0 flex items-center justify-center z-30">
               <div className="text-center bg-white/90 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 shadow-lg">
-                <h2 className="text-gray-900 text-3xl md:text-4xl lg:text-5xl font-medium mb-4 leading-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-4 leading-tight bg-gradient-to-r from-gray-900 via-primary to-secondary bg-clip-text text-transparent">
                   Every department.
                 </h2>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium leading-tight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium leading-tight bg-gradient-to-r from-gray-900 via-primary to-secondary bg-clip-text text-transparent">
                   One platform.
                 </h2>
               </div>

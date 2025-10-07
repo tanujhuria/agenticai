@@ -97,7 +97,7 @@ export function PartnersDropdown({ onNavigationClick, isWhiteBackground, onMenuS
                   </div>
                 </motion.div>
 
-                {/* Featured Content Section */}
+                {/* Contact CTA Section (replaces Featured Content) */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -105,39 +105,19 @@ export function PartnersDropdown({ onNavigationClick, isWhiteBackground, onMenuS
                   className="col-span-6 space-y-1"
                 >
                   <h3 className="text-sm font-bold text-gray-900 mb-4 uppercase tracking-wide">
-                    {partnersData.featured.title}
+                    Get in touch
                   </h3>
                   <div className="w-full h-px bg-gray-200 mb-6"></div>
-                  
-                  <motion.button
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.4 }}
-                    onClick={() => {
-                      onNavigationClick(partnersData.featured.content.page);
-                      handleMenuToggle(false);
-                    }}
-                    className="flex items-center space-x-4 w-full text-left p-6 rounded-lg hover:bg-purple-50 transition-all duration-200 group border border-gray-100 hover:border-purple-200 bg-gradient-to-br from-blue-50 to-purple-50"
-                  >
-                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-white p-2">
-                      <img 
-                        src={exampleImage} 
-                        alt="AWS Marketplace"
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-semibold text-gray-900 group-hover:text-primary transition-colors duration-200 mb-1">
-                        {partnersData.featured.content.title}
-                      </h4>
-                      <p className="text-sm text-gray-600">
-                        Discover Agentic View solutions on AWS Marketplace for seamless cloud integration
-                      </p>
-                    </div>
-                    <div className="transform rotate-45 flex-shrink-0">
-                      <ArrowUpRight className="w-5 h-5 text-primary group-hover:scale-110 transition-transform duration-200" />
-                    </div>
-                  </motion.button>
+                  <div className="p-6 rounded-lg border border-gray-100 bg-white">
+                    <p className="text-sm text-gray-700 mb-4">Let’s talk about partnerships and co-selling opportunities.</p>
+                    <button
+                      onClick={() => { onNavigationClick('contact'); handleMenuToggle(false); }}
+                      className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-lg hover:opacity-90 transition-all"
+                    >
+                      Talk to sales
+                      <ArrowUpRight className="w-4 h-4 ml-2" />
+                    </button>
+                  </div>
                 </motion.div>
               </div>
             </div>

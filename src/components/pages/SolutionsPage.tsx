@@ -321,7 +321,7 @@ export function SolutionsPage() {
               Ready to Transform Your Business?
             </h2>
             <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Join thousands of enterprises who trust Agentic View to power their digital transformation journey.
+              Join thousands of enterprises who trust AgenticView to power their digital transformation journey.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
